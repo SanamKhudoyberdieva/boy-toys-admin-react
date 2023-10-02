@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
 import "./assets/css/core.css";
 import "./assets/css/custom.css";
 import "./assets/css/demo.css";
@@ -19,16 +20,16 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Product />} />
-          <Route  path="/client" element={<Client />} />
-          <Route  path="/about-client" element={<AboutClient />} />
-          <Route  path="/banner" element={<Banner />} />
-          <Route  path="/branches" element={<Branches />} />
-          <Route  path="/order-detail" element={<OrderDetail />} />
-          <Route  path="/payment" element={<Payment />} />
+          <Route path="/client" element={<Client />} />
+          <Route path="/about-client" element={<AboutClient />} />
+          <Route path="/banner" element={<Banner />} />
+          <Route path="/branches" element={<Branches />} />
+          <Route path="/order-detail" element={<OrderDetail />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </Layout>
     </>
-  )
+  );
 }
 
 export default App;
