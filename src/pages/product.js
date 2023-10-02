@@ -1,6 +1,14 @@
 import React from "react";
+import {
+  faChevronLeft,
+  faChevronRight,
+  faEye,
+  faPen,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { showEditModal, showViewModal } from "../store/actions/modalsAction";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -50,7 +58,7 @@ const Product = () => {
                         data-bs-target="#productEditModal"
                         onClick={() => dispatch(showEditModal())}
                       >
-                        <i className="fa-solid fa-pen"></i>
+                        <FontAwesomeIcon icon={faPen} />
                       </button>
                       <button
                         className="btn btn-info btn-icon mb-2 mb-md-0 mr-0 mr-md-2"
@@ -58,10 +66,10 @@ const Product = () => {
                         data-bs-target="#productViewModal"
                         onClick={() => dispatch(showViewModal())}
                       >
-                        <i className="fa-solid fa-eye"></i>
+                        <FontAwesomeIcon icon={faEye} />
                       </button>
                       <button className="btn btn-danger btn-icon">
-                        <i className="fa-solid fa-trash-can"></i>
+                        <FontAwesomeIcon icon={faTrashCan} />
                       </button>
                     </div>
                   </td>
@@ -89,7 +97,7 @@ const Product = () => {
               <ul className="pagination m-0 align-items-center">
                 <li className="page-item prev">
                   <button className="page-link">
-                    <i className="tf-icon bx bx-chevron-left"></i>
+                    <FontAwesomeIcon icon={faChevronLeft} />
                   </button>
                 </li>
                 <li className="page-item">
@@ -109,7 +117,7 @@ const Product = () => {
                 </li>
                 <li className="page-item next">
                   <button className="page-link">
-                    <i className="tf-icon bx bx-chevron-right"></i>
+                    <FontAwesomeIcon icon={faChevronRight} />
                   </button>
                 </li>
               </ul>

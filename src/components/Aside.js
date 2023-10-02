@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLayerGroup, faUsers, faMapLocationDot, faMoneyCheckDollar, faPanorama, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Aside = () => {
   return (
@@ -15,50 +17,45 @@ const Aside = () => {
         </Link>
 
         <Link
-          href="javascript:void(0);"
+          to={"/"}
           className="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none"
         >
-          <i className="bx bx-chevron-left bx-sm align-middle"></i>
+          <FontAwesomeIcon className="bx-sm align-middle" icon={faChevronLeft} />
         </Link>
       </div>
 
       <div className="menu-inner-shadow"></div>
 
       <ul className="menu-inner py-1">
-        {/* Products */}
         <li className="menu-item">
-          <a href="index.html" className="menu-link">
-            <i className="menu-icon fa-solid fa-layer-group"></i>
+          <Link to={"/"} className="menu-link">
+            <FontAwesomeIcon className="menu-icon" icon={faLayerGroup} />
             <div data-i18n="Analytics">Products</div>
-          </a>
+          </Link>
         </li>
-        {/* Banners  */}
         <li className="menu-item">
-          <a href="banner.html" className="menu-link">
-            <i className="menu-icon fa-solid fa-panorama"></i>
+          <Link to={"/banner"} className="menu-link">
+            <FontAwesomeIcon className="menu-icon" icon={faPanorama} />
             <div data-i18n="Analytics">Banners</div>
-          </a>
+          </Link>
         </li>
-        {/* Clients */}
         <li className="menu-item">
-          <a href="clients.html" className="menu-link">
-            <i className="menu-icon fa-solid fa-users"></i>
+          <Link to={"/client"} className="menu-link">
+            <FontAwesomeIcon className="menu-icon" icon={faUsers} />
             <div data-i18n="Analytics">Clients</div>
-          </a>
+          </Link>
         </li>
-        {/* Branches */}
         <li className="menu-item">
-          <a href="branches.html" className="menu-link">
-            <i className="menu-icon fa-solid fa-map-location-dot"></i>
+          <Link to={"/branches"} className="menu-link">
+            <FontAwesomeIcon className="menu-icon" icon={faMapLocationDot} />
             <div data-i18n="Analytics">Branches</div>
-          </a>
+          </Link>
         </li>
-        {/* Payments */}
         <li className="menu-item active">
-          <a href="payments.html" className="menu-link">
-            <i className="menu-icon fa-solid fa-money-check-dollar"></i>
+          <Link to={"/payment"} className="menu-link">
+            <FontAwesomeIcon className="menu-icon" icon={faMoneyCheckDollar} />
             <div data-i18n="Analytics">Payments</div>
-          </a>
+          </Link>
         </li>
       </ul>
     </aside>
