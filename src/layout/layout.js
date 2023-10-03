@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
             <Navbar />
             <div class="content-wrapper">
               {children}
+
               <EditModal />
               <ViewModal />
               <MobileNav />

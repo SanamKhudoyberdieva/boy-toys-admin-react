@@ -6,13 +6,21 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EditPaymentModals from "../components/Modals/EditPaymentModal.js";
 
 import React from "react";
 import { Nav } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import {
+  showPaymentEditModal,
+  showPaymentCreateModal,
+} from "../store/actions/modalsAction.js";
+import AddPaymentModal from "../components/Modals/AddPaymentModal.js";
 
 const Payment = () => {
+  const dispatch = useDispatch();
   return (
-    <section>
+    <>
       <div className="content-wrapper">
         <div className="container-xxl flex-grow-1 container-p-y">
           <h4 className="fw-bold mb-4">Payments</h4>
@@ -43,6 +51,7 @@ const Payment = () => {
                     data-bs-toggle="modal"
                     data-bs-target="#createPaymentModal"
                     type="button"
+                    onClick={() => dispatch(showPaymentCreateModal())}
                   >
                     <span>
                       {/* <box-icon className="bx bx-plus me-sm-1"></box-icon>/ */}
@@ -71,6 +80,7 @@ const Payment = () => {
                             className="btn btn-primary btn-icon mr-0 mr-md-2"
                             data-bs-toggle="modal"
                             data-bs-target="#paymentEditModal"
+                            onClick={() => dispatch(showPaymentEditModal())}
                           >
                             <FontAwesomeIcon icon={faPen} />
                           </button>
@@ -126,7 +136,9 @@ const Payment = () => {
           </div>
         </div>
       </div>
-    </section>
+      <EditPaymentModals />
+      <AddPaymentModal />
+    </>
   );
 };
 
