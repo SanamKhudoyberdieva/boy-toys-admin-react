@@ -9,12 +9,12 @@ import DeleteModal from "../components/Modals/DeleteModal";
 const Layout = ({ children }) => {
   return (
     <>
-      <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
+      <div className="layout-wrapper layout-content-navbar">
+        <div className="layout-container">
           <Aside />
-          <div class="layout-page">
+          <div className="layout-page">
             <Navbar />
-            <div class="content-wrapper">
+            <div className="content-wrapper">
               {children}
               <EditModal />
               <ViewModal />

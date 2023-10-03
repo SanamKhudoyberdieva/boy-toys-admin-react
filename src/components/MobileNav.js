@@ -1,40 +1,46 @@
-import { faLayerGroup, faMapLocationDot, faMoneyCheckDollar, faPanorama, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLayerGroup,
+  faMapLocationDot,
+  faMoneyCheckDollar,
+  faPanorama,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MobileNav = () => {
   return (
-    <div class="mobile-nav d-lg-none">
-      <ul class="nav">
-        <li class="nav-item">
-          <Link to={"/"} class="nav-link active">
+    <div className="mobile-nav d-lg-none">
+      <ul className="nav">
+        <li className="nav-item">
+          <Link to={"/"} className="nav-link active">
             <FontAwesomeIcon className="menu-icon" icon={faLayerGroup} />
-            <span class="menu-title">Products</span>
+            <span className="menu-title">Products</span>
           </Link>
         </li>
-        <li class="nav-item">
-          <Link to={"/client"} class="nav-link">
+        <li className="nav-item">
+          <Link to={"/client"} className="nav-link">
             <FontAwesomeIcon className="menu-icon" icon={faPanorama} />
-            <span class="menu-title">Clients</span>
+            <span className="menu-title">Clients</span>
           </Link>
         </li>
-        <li class="nav-item">
-          <Link to={"/banner"} class="nav-link">
+        <li className="nav-item">
+          <Link to={"/banner"} className="nav-link">
             <FontAwesomeIcon className="menu-icon" icon={faUsers} />
-            <span class="menu-title">Banners</span>
+            <span className="menu-title">Banners</span>
           </Link>
         </li>
-        <li class="nav-item">
-          <Link to={"/payment"} class="nav-link">
+        <li className="nav-item">
+          <Link to={"/payment"} className="nav-link">
             <FontAwesomeIcon className="menu-icon" icon={faMapLocationDot} />
-            <span class="menu-title">Payments</span>
+            <span className="menu-title">Payments</span>
           </Link>
         </li>
-        <li class="nav-item">
-          <Link to={"/branches"} class="nav-link">
+        <li className="nav-item">
+          <Link to={"/branches"} className="nav-link">
             <FontAwesomeIcon className="menu-icon" icon={faMoneyCheckDollar} />
-            <span class="menu-title">Branches</span>
+            <span className="menu-title">Branches</span>
           </Link>
         </li>
       </ul>
