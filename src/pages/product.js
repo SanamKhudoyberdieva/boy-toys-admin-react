@@ -7,7 +7,11 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { showDeleteModal, showEditModal, showViewModal } from "../store/actions/modalsAction";
+import {
+  showDeleteModal,
+  showEditModal,
+  showViewModal,
+} from "../store/actions/modalsAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Product = () => {
