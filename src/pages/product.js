@@ -7,11 +7,12 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { showEditModal, showViewModal } from "../store/actions/modalsAction";
+import { showDeleteModal, showEditModal, showViewModal } from "../store/actions/modalsAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Product = () => {
   const dispatch = useDispatch();
+
   return (
     <div className="container-xxl flex-grow-1 container-p-y">
       <h4 className="fw-bold mb-4">Products</h4>
@@ -33,7 +34,7 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="overflow-x-auto">
+          <div className="overflow-scroll">
             <table className="table mb-4 table-striped table-bordered">
               <thead>
                 <tr>
@@ -51,42 +52,27 @@ const Product = () => {
                   <td>Otto</td>
                   <td>@mdo</td>
                   <td>
-                    <div>
+                    <div className="row gap-2 d-flex flex-column flex-md-row  align-items-center">
                       <button
                         className="btn btn-primary btn-icon mb-2 mb-md-0 mr-0 mr-md-2"
-                        data-bs-toggle="modal"
-                        data-bs-target="#productEditModal"
                         onClick={() => dispatch(showEditModal())}
                       >
                         <FontAwesomeIcon icon={faPen} />
                       </button>
                       <button
                         className="btn btn-info btn-icon mb-2 mb-md-0 mr-0 mr-md-2"
-                        data-bs-toggle="modal"
-                        data-bs-target="#productViewModal"
                         onClick={() => dispatch(showViewModal())}
                       >
                         <FontAwesomeIcon icon={faEye} />
                       </button>
-                      <button className="btn btn-danger btn-icon">
+                      <button
+                        className="btn btn-danger btn-icon"
+                        onClick={() => dispatch(showDeleteModal())}
+                      >
                         <FontAwesomeIcon icon={faTrashCan} />
                       </button>
                     </div>
                   </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
                 </tr>
               </tbody>
             </table>

@@ -3,6 +3,7 @@ import ActionTypes from "../action-types/actionTypes";
 const initialState = {
   editModal: false,
   viewModal: false,
+  deleteModal: false,
 };
 
 const modalsReducer = (state = initialState, action) => {
@@ -15,6 +16,10 @@ const modalsReducer = (state = initialState, action) => {
       return { ...state, viewModal: true };
     case ActionTypes.MODALS.CLOSE_VIEW_MODAL:
       return { ...state, viewModal: false };
+    case ActionTypes.MODALS.SHOW_DELETE_MODAL:
+      return { ...state, deleteModal: true };
+    case ActionTypes.MODALS.CLOSE_DELETE_MODAL:
+      return { ...state, deleteModal: false };
     default:
       return state;
   }

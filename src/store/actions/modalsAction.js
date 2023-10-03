@@ -23,3 +23,15 @@ export const closeViewModal = () => {
     type: ActionTypes.MODALS.CLOSE_VIEW_MODAL,
   };
 };
+
+export const showDeleteModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_DELETE_MODAL,
+  };
+};
+
+export const closeDeleteModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_DELETE_MODAL,
+  };
+};
