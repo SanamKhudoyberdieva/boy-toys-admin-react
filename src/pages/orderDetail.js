@@ -151,13 +151,8 @@ const OrderDetail = () => {
                       </td>
                       <td>
                         <Dropdown>
-                          <Dropdown.Toggle>
-                            <button className="btn" role="button">
-                              <FontAwesomeIcon
-                                icon={faEllipsis}
-                                rotation={90}
-                              />
-                            </button>
+                          <Dropdown.Toggle className="hide-arrow dropdown-toggle btn-succes">
+                            <FontAwesomeIcon icon={faEllipsis} rotation={90} />
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
                             <Dropdown.Item>
