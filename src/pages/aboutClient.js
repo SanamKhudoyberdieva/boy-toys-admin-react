@@ -90,9 +90,9 @@ const AboutClient = () => {
                         <th className="">Date</th>
                         <th className="">Status</th>
                         <th>Spent</th>
-                        <th className="text-md-center" aria-label="Actions">
+                        {/* <th className="text-md-center" aria-label="Actions">
                           Actions
-                        </th>
+                        </th> */}
                       </tr>
                     </thead>
                     <tbody>
@@ -118,7 +118,7 @@ const AboutClient = () => {
                         <td className="">
                           <span>$59.28</span>
                         </td>
-                        <td className="">
+                        {/* <td className="">
                           <div className="text-xxl-center">
                             <button
                               className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
@@ -137,7 +137,7 @@ const AboutClient = () => {
                               </button>
                             </div>
                           </div>
-                        </td>
+                        </td> */}
                       </tr>
                       <tr className="even">
                         <td className="control dtr-hidden"></td>
@@ -161,7 +161,7 @@ const AboutClient = () => {
                         <td className="">
                           <span>$333.83</span>
                         </td>
-                        <td className="">
+                        {/* <td className="">
                           <div className="text-xxl-center">
                             <button
                               className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
@@ -180,7 +180,7 @@ const AboutClient = () => {
                               </button>
                             </div>
                           </div>
-                        </td>
+                        </td> */}
                       </tr>
                       <tr className="odd">
                         <td className="control dtr-hidden"></td>
@@ -204,7 +204,7 @@ const AboutClient = () => {
                         <td className="">
                           <span>$62.71</span>
                         </td>
-                        <td className="">
+                        {/* <td className="">
                           <div className="text-xxl-center">
                             <button
                               className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
@@ -223,7 +223,7 @@ const AboutClient = () => {
                               </button>
                             </div>
                           </div>
-                        </td>
+                        </td> */}
                       </tr>
                       <tr className="even">
                         <td className="control dtr-hidden"></td>
@@ -247,7 +247,7 @@ const AboutClient = () => {
                         <td className="">
                           <span>$100.18</span>
                         </td>
-                        <td className="">
+                        {/* <td className="">
                           <div className="text-xxl-center">
                             <button
                               className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
@@ -266,7 +266,7 @@ const AboutClient = () => {
                               </button>
                             </div>
                           </div>
-                        </td>
+                        </td> */}
                       </tr>
                     </tbody>
                   </table>

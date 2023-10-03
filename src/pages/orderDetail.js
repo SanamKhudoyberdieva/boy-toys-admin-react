@@ -1,6 +1,7 @@
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Button, Dropdown } from "react-bootstrap";
 
 const OrderDetail = () => {
   return (
@@ -149,27 +150,33 @@ const OrderDetail = () => {
                         <h6 className="mb-0">$1682</h6>
                       </td>
                       <td>
-                        <div className="text-xxl-center">
-                          <button
-                            className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                            data-bs-toggle="dropdown"
-                          >
-                            <FontAwesomeIcon icon={faEllipsis} rotation={90} />
-                          </button>
-                          <div className="dropdown-menu dropdown-menu-end m-0">
-                            <button
-                              className="btn"
-                              tabindex="0"
-                              data-bs-toggle="modal"
-                              data-bs-target="#orderEditModal"
-                            >
-                              Edit
+                        <Dropdown>
+                          <Dropdown.Toggle>
+                            <button className="btn" role="button">
+                              <FontAwesomeIcon
+                                icon={faEllipsis}
+                                rotation={90}
+                              />
                             </button>
-                            <button className="dropdown-item delete-record">
-                              Delete
-                            </button>
-                          </div>
-                        </div>
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item>
+                              <button
+                                className="btn"
+                                tabindex="0"
+                                data-bs-toggle="modal"
+                                data-bs-target="#orderEditModal"
+                              >
+                                Edit
+                              </button>
+                            </Dropdown.Item>
+                            <Dropdown.Item>
+                              <button className="dropdown-item delete-record">
+                                Delete
+                              </button>
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </td>
                     </tr>
                     <tr className="even">
@@ -206,29 +213,7 @@ const OrderDetail = () => {
                       <td>
                         <h6 className="mb-0">$2688</h6>
                       </td>
-                      <td>
-                        <div className="text-xxl-center">
-                          <button
-                            className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                            data-bs-toggle="dropdown"
-                          >
-                            <i className="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div className="dropdown-menu dropdown-menu-end m-0">
-                            <button
-                              className="btn"
-                              tabindex="0"
-                              data-bs-toggle="modal"
-                              data-bs-target="#orderEditModal"
-                            >
-                              Edit
-                            </button>
-                            <button className="dropdown-item delete-record">
-                              Delete
-                            </button>
-                          </div>
-                        </div>
-                      </td>
+                      <td></td>
                     </tr>
                     <tr className="odd">
                       <td className="control" tabindex="0"></td>

@@ -10,46 +10,46 @@ function EditBranchModals() {
     return dispatch(closePaymentEditModal());
   };
   return (
-    <Modal class="modal fade" animation={false} show={paymentEditModal}>
+    <Modal className="modal fade" animation={false} show={paymentEditModal}>
       <div>
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="productEditModalLabel">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="productEditModalLabel">
               Branches Name
             </h5>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
               onClick={() => hideModal()}
             ></button>
           </div>
-          <div class="modal-body">
+          <div className="modal-body">
             <form>
               <div>
-                <label htmlFor="name" class="mb-2 form-labe">
+                <label htmlFor="name" className="mb-2 form-labe">
                   Name
                 </label>
                 <input
                   type="text"
-                  class="form-control mb-2"
+                  className="form-control mb-2"
                   placeholder="Branch name"
                   name="name"
                 />
               </div>
             </form>
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              className="btn btn-secondary"
               data-bs-dismiss="modal"
               onClick={() => hideModal()}
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">
+            <button type="button" className="btn btn-primary">
               Save changes
             </button>
           </div>

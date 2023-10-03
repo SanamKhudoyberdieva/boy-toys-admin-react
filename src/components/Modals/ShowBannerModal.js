@@ -11,41 +11,41 @@ function ShowBannerModal() {
     return dispatch(closeBannerViewModal());
   };
   return (
-    <Modal class="modal fade" show={showBannerModal}>
+    <Modal className="modal fade" show={showBannerModal}>
       <div>
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="productEditModalLabel">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="productEditModalLabel">
               Slider
             </h5>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
               onClick={() => hideModal()}
             ></button>
           </div>
-          <div class="modal-body">
+          <div className="modal-body">
             <form>
               <div>
-                <label htmlFor="name-uz" class="mb-2 form-labe">
+                <label htmlFor="name-uz" className="mb-2 form-labe">
                   {" "}
                   Name{" "}
                 </label>
                 <input
                   type="text"
-                  class="form-control mb-2"
+                  className="form-control mb-2"
                   placeholder="Banner nomi ..."
                   name="nameUz"
                   disabled="true"
                 />
-                <label htmlFor="description-uz" class="mb-2 form-labe">
+                <label htmlFor="description-uz" className="mb-2 form-labe">
                   Tasnifi
                 </label>
                 <textarea
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Banner Tasnifi ..."
                   name="descriptionUz"
                   disabled="true"
@@ -53,73 +53,73 @@ function ShowBannerModal() {
               </div>
 
               <div>
-                <label htmlFor="group-image" class="mb-2 form-labe">
+                <label htmlFor="group-image" className="mb-2 form-labe">
                   Banner Image
                 </label>
                 <input
                   type="file"
                   id="group-image"
                   name="fileImage"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Group image"
                   disabled="true"
                 />
               </div>
-              <hr class="my-4" />
+              <hr className="my-4" />
               <div>
-                <label htmlFor="name-ru" class="mb-2 form-labe">
+                <label htmlFor="name-ru" className="mb-2 form-labe">
                   Название
                 </label>
                 <input
                   type="text"
-                  class="form-control mb-2"
+                  className="form-control mb-2"
                   placeholder="Banner nomi"
                   name="nameRu"
                   disabled="true"
                 />
-                <label htmlFor="description-ru" class="mb-2 form-labe">
+                <label htmlFor="description-ru" className="mb-2 form-labe">
                   Описание
                 </label>
                 <textarea
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Banner tasnifi..."
                   name="descriptionRu"
                   disabled="true"
                 ></textarea>
               </div>
               <div>
-                <label htmlFor="group-image" class="mb-2 form-labe">
+                <label htmlFor="group-image" className="mb-2 form-labe">
                   Banner Image
                 </label>
                 <input
                   type="file"
                   id="group-image"
                   name="fileImage"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Group image"
                   disabled="true"
                 />
               </div>
-              <hr class="my-4" />
+              <hr className="my-4" />
               <div>
-                <label htmlFor="name-eu" class="mb-2 form-labe">
+                <label htmlFor="name-eu" className="mb-2 form-labe">
                   {" "}
                   Name{" "}
                 </label>
                 <input
                   type="text"
-                  class="form-control mb-2"
+                  className="form-control mb-2"
                   placeholder="Banner name"
                   name="nameEn"
                   disabled="true"
                 />
-                <label htmlFor="description-eu" class="mb-2 form-labe">
+                <label htmlFor="description-eu" className="mb-2 form-labe">
                   Description
                 </label>
                 <textarea
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Banner description..."
                   name="descriptionEn"
                   disabled="true"
@@ -127,25 +127,25 @@ function ShowBannerModal() {
               </div>
 
               <div>
-                <hr class="my-4" />
+                <hr className="my-4" />
 
-                <label htmlFor="group-image" class="mb-2 form-labe">
+                <label htmlFor="group-image" className="mb-2 form-labe">
                   Banner Image
                 </label>
                 <input
                   type="file"
                   id="group-image"
                   name="fileImage"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Group image"
                 />
               </div>
             </form>
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              className="btn btn-secondary"
               data-bs-dismiss="modal"
               onClick={() => hideModal()}
             >
