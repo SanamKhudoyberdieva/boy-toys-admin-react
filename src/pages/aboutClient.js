@@ -61,7 +61,7 @@ const AboutClient = () => {
             <div className="card mb-4 justify-content-beetwen">
               <div className="table-responsive mb-3">
                 <div className="dataTables_wrapper dt-bootstrap5 no-footer">
-                  <div className="card-header d-flex flex-wrap py-3 py-sm-2 align-items-center">
+                  <div className="card-header d-flex justify-content-between flex-wrap py-3 py-sm-2 align-items-center">
                     <div className="head-label text-center me-4 ms-1">
                       <h5 className="card-title mb-0 text-nowrap">
                         Orders placed

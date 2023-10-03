@@ -22,9 +22,6 @@ const Product = () => {
           <div className="row justify-content-end mb-4">
             <div className="col-md-4">
               <div className="d-flex align-items-center">
-                <label for="local-search" className="me-2">
-                  Search:
-                </label>
                 <input
                   className="form-control"
                   type="text"
