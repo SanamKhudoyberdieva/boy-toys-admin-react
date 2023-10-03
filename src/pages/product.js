@@ -31,7 +31,7 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="overflow-scroll">
+          <div className="overflow-x-auto">
             <table className="table mb-4 table-striped table-bordered">
               <thead>
                 <tr>
