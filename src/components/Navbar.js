@@ -1,4 +1,8 @@
+import { faArrowRightFromBracket, faArrowRightFromFile, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Dropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,9 +11,9 @@ const Navbar = () => {
       id="layout-navbar"
     >
       <div className="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-        <a className="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-          <i className="bx bx-menu bx-sm"></i>
-        </a>
+        <Link className="nav-item nav-link px-0 me-xl-4">
+          <FontAwesomeIcon icon={faBars} />
+        </Link>
       </div>
 
       <div
@@ -18,56 +22,36 @@ const Navbar = () => {
       >
         <ul className="nav d-none d-md-flex wu-main-nav">
           <li className="nav-item">
-            <a href="#" className="nav-link">
+            <Link to={"/"} className="nav-link">
               {" "}
-              Mail{" "}
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              {" "}
-              SRS{" "}
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              {" "}
-              Timetable{" "}
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              {" "}
-              Attendace{" "}
-            </a>
+              Boy Toys website{" "}
+            </Link>
           </li>
         </ul>
 
         <ul className="navbar-nav flex-row align-items-center ms-auto">
-          {/* User */}
-          <li className="nav-item navbar-dropdown dropdown-user dropdown">
-            <a
-              className="nav-link dropdown-toggle hide-arrow"
-              href="javascript:void(0);"
+          <Dropdown className="nav-item navbar-dropdown dropdown-user dropdown">
+            <Dropdown.Toggle
+              className="nav-link dropdown-toggle hide-arrow btn-dropdown"
               data-bs-toggle="dropdown"
             >
               <div className="avatar avatar-online">
                 <img
-                  src="./img/profile.jpeg"
-                  alt
+                  src={require("../assets/img/profile.jpg")}
+                  alt=""
                   className="w-px-40 h-auto rounded-circle"
                 />
               </div>
-            </a>
-            <ul className="dropdown-menu dropdown-menu-end">
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="dropdown-menu dropdown-menu-end">
               <li>
-                <a className="dropdown-item" href="#">
+                <Dropdown.Item className="dropdown-item">
                   <div className="d-flex">
                     <div className="flex-shrink-0 me-3">
                       <div className="avatar avatar-online">
                         <img
-                          src="./img/profile.jpeg"
-                          alt
+                          src={require("../assets/img/profile.jpg")}
+                          alt=""
                           className="w-px-40 h-auto rounded-circle"
                         />
                       </div>
@@ -79,29 +63,19 @@ const Navbar = () => {
                       <small className="text-muted">Admin</small>
                     </div>
                   </div>
-                </a>
+                </Dropdown.Item>
               </li>
               <li>
                 <div className="dropdown-divider"></div>
               </li>
               <li>
-                <a className="dropdown-item" href="./profile.html">
-                  <i className="bx bx-user me-2"></i>
-                  <span className="align-middle">My Profile</span>
-                </a>
-              </li>
-              <li>
-                <div className="dropdown-divider"></div>
-              </li>
-              <li>
-                <a className="dropdown-item" href="auth-login-basic.html">
-                  <i className="bx bx-power-off me-2"></i>
+                <Dropdown.Item className="dropdown-item">
+                  <FontAwesomeIcon className="me-2" icon={faArrowRightFromBracket} />
                   <span className="align-middle">Log Out</span>
-                </a>
+                </Dropdown.Item>
               </li>
-            </ul>
-          </li>
-          {/* User */}
+            </Dropdown.Menu>
+          </Dropdown>
         </ul>
       </div>
     </nav>
