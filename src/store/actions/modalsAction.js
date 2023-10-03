@@ -46,3 +46,15 @@ export const closePaymentCreateModal = () => {
     type: ActionTypes.MODALS.CLOSE_PAYMENT_CREATE_MODAL,
   };
 };
+
+export const showBannerViewModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_BANNER_VIEW_MODAL,
+  };
+};
+
+export const closeBannerViewModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_BANNER_VIEW_MODAL,
+  };
+};

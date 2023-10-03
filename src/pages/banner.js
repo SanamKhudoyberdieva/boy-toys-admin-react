@@ -9,8 +9,18 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Nav } from "react-bootstrap";
+import {
+  showBannerViewModal,
+  showPaymentCreateModal,
+  showPaymentEditModal,
+} from "../store/actions/modalsAction.js";
+import { useDispatch } from "react-redux";
+import EditBannerModals from "../components/Modals/EditBannerModal.js";
+import AddBannerModals from "../components/Modals/AddBannerModal.js";
+import ShowBannerModal from "../components/Modals/ShowBannerModal.js";
 
 const Banner = () => {
+  const dispatch = useDispatch();
   return (
     <div className="content-wrapper">
       <div className="container-xxl flex-grow-1 container-p-y">
@@ -43,6 +53,7 @@ const Banner = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#productEditModal"
                   type="button"
+                  onClick={() => dispatch(showPaymentCreateModal())}
                 >
                   <span>
                     <FontAwesomeIcon icon={faPlus} className="me-sm-1" />
@@ -81,6 +92,7 @@ const Banner = () => {
                           className="btn btn-primary btn-icon mr-0 mr-md-2"
                           data-bs-toggle="modal"
                           data-bs-target="#productEditModal"
+                          onClick={() => dispatch(showPaymentEditModal())}
                         >
                           {/* <i className="fa-solid fa-pen"></i> */}
                           <FontAwesomeIcon icon={faPen} />
@@ -90,6 +102,7 @@ const Banner = () => {
                           className="btn btn-info btn-icon mb-md-0 mr-0 mr-md-2"
                           data-bs-toggle="modal"
                           data-bs-target="#bannerViewModal"
+                          onClick={() => dispatch(showBannerViewModal())}
                         >
                           {/* <i className="fa-solid fa-eye"></i> */}
                           <FontAwesomeIcon icon={faEye} />
@@ -148,6 +161,9 @@ const Banner = () => {
       </div>
 
       <div className="content-backdrop fade"></div>
+      <EditBannerModals />
+      <AddBannerModals />
+      <ShowBannerModal />
     </div>
   );
 };

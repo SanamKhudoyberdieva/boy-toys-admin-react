@@ -4,6 +4,7 @@ const initialState = {
   editModal: false,
   paymentEditModal: false,
   paymetnCreateModal: false,
+  showBannerModal: false,
   viewModal: false,
 };
 
@@ -25,6 +26,10 @@ const modalsReducer = (state = initialState, action) => {
       return { ...state, paymetnCreateModal: true };
     case ActionTypes.MODALS.CLOSE_PAYMENT_CREATE_MODAL:
       return { ...state, paymetnCreateModal: false };
+    case ActionTypes.MODALS.SHOW_BANNER_VIEW_MODAL:
+      return { ...state, showBannerModal: true };
+    case ActionTypes.MODALS.CLOSE_BANNER_VIEW_MODAL:
+      return { ...state, showBannerModal: false };
     default:
       return state;
   }
