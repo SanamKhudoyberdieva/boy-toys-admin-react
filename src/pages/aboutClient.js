@@ -6,6 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const AboutClient = () => {
   return (
@@ -99,9 +100,9 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="">1</td>
                         <td className="sorting_1">
-                          <a href="./order-details.html" className="fw-medium">
+                          <Link to={"/order-detail"} className="fw-medium">
                             <span>#9957</span>
-                          </a>
+                          </Link>
                         </td>
                         <td className="">
                           <span className="text-nowrap">Nov 29, 2022</span>
@@ -142,9 +143,9 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="">2</td>
                         <td className="sorting_1">
-                          <a href="./order-details.html" className="fw-medium">
+                          <Link to={"/order-detail"} className="fw-medium">
                             <span>#9941</span>
-                          </a>
+                          </Link>
                         </td>
                         <td className="">
                           <span className="text-nowrap">Jun 20, 2022</span>
@@ -185,9 +186,9 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="dt-checkboxes-cell">3</td>
                         <td className="sorting_1">
-                          <a href="order-details.html" className="fw-medium">
+                          <Link to={"/order-detail"} className="fw-medium">
                             <span>#9885</span>
-                          </a>
+                          </Link>
                         </td>
                         <td className="">
                           <span className="text-nowrap">Sep 11, 2022</span>
@@ -228,9 +229,9 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="dt-checkboxes-cell">4</td>
                         <td className="sorting_1">
-                          <a href="./order-details.html" className="fw-medium">
+                          <Link to={"/order-detail"} className="fw-medium">
                             <span>#9879</span>
-                          </a>
+                          </Link>
                         </td>
                         <td className="">
                           <span className="text-nowrap">Dec 23, 2022</span>
