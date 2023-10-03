@@ -8,8 +8,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Nav } from "react-bootstrap";
+import {
+  showPaymentCreateModal,
+  showPaymentEditModal,
+} from "../store/actions/modalsAction.js";
+import { useDispatch } from "react-redux";
+import AddBranchModals from "../components/Modals/AddBranchModal.js";
+import EditBranchModals from "../components/Modals/EditBranchModal.js";
 
 const Branches = () => {
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="content-wrapper">
@@ -42,6 +50,7 @@ const Branches = () => {
                     data-bs-toggle="modal"
                     data-bs-target="#branchCreateModal"
                     type="button"
+                    onClick={() => dispatch(showPaymentCreateModal())}
                   >
                     <span>
                       <FontAwesomeIcon icon={faPlus} className="me-sm-1" />
@@ -69,6 +78,7 @@ const Branches = () => {
                             className="btn btn-primary btn-icon mr-0 mr-md-2"
                             data-bs-toggle="modal"
                             data-bs-target="#branchesEditModal"
+                            onClick={() => dispatch(showPaymentEditModal())}
                           >
                             <FontAwesomeIcon icon={faPen} />
                           </button>
@@ -124,6 +134,8 @@ const Branches = () => {
           </div>
         </div>
       </div>
+      <AddBranchModals />
+      <EditBranchModals />
     </div>
   );
 };

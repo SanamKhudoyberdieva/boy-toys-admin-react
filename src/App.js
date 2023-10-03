@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.css";
 import "./assets/css/core.css";
 import "./assets/css/custom.css";
 import "./assets/css/demo.css";
@@ -28,7 +29,7 @@ function App() {
         </Routes>
       </Layout>
     </>
-  )
+  );
 }
 
 export default App;
