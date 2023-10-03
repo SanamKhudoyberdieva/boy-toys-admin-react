@@ -43,6 +43,7 @@ const Product = () => {
                   <th scope="col">Name</th>
                   <th scope="col">Description</th>
                   <th scope="col">Price</th>
+                  <th scope="col">Discount</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
@@ -51,7 +52,8 @@ const Product = () => {
                   <th scope="row">1</th>
                   <td>Mark</td>
                   <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>400000</td>
+                  <td>350000</td>
                   <td>
                     <div className="row gap-2 d-flex flex-column flex-md-row  align-items-center">
                       <button
