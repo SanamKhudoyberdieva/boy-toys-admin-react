@@ -7,6 +7,7 @@ const initialState = {
   showBannerModal: false,
   viewModal: false,
   deleteModal: false,
+  orderModal: false,
 };
 
 const modalsReducer = (state = initialState, action) => {
@@ -35,6 +36,11 @@ const modalsReducer = (state = initialState, action) => {
       return { ...state, showBannerModal: true };
     case ActionTypes.MODALS.CLOSE_BANNER_VIEW_MODAL:
       return { ...state, showBannerModal: false };
+    case ActionTypes.MODALS.SHOW_ORDER_EDIT_MODAL:
+      return { ...state, orderModal: true };
+    case ActionTypes.MODALS.CLOSE_ORDER_EDIT_MODAL:
+      return { ...state, orderModal: false };
+
     default:
       return state;
   }

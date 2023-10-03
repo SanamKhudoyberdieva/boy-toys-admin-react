@@ -70,7 +70,7 @@ const Product = () => {
                         className="btn btn-danger btn-icon"
                         onClick={() => dispatch(showDeleteModal())}
                       >
-                        <FontAwesomeIcon icon={faTrashCan} />
+                        <FontAwesomeIcon icon={faTrashCan}  />
                       </button>
                     </div>
                   </td>

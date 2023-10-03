@@ -24,27 +24,9 @@ export const closeViewModal = () => {
   };
 };
 
-export const showDeleteModal = () => {
-  return {
-    type: ActionTypes.MODALS.SHOW_DELETE_MODAL,
-  };
-};
-
 export const closeDeleteModal = () => {
   return {
     type: ActionTypes.MODALS.CLOSE_DELETE_MODAL,
-  };
-};
-
-export const showPaymentCreateModal = () => {
-  return {
-    type: ActionTypes.MODALS.SHOW_PAYMENT_CREATE_MODAL,
-  };
-};
-
-export const closePaymentCreateModal = () => {
-  return {
-    type: ActionTypes.MODALS.CLOSE_PAYMENT_CREATE_MODAL,
   };
 };
 
@@ -60,6 +42,17 @@ export const closePaymentEditModal = () => {
   };
 };
 
+export const showPaymentCreateModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_PAYMENT_CREATE_MODAL,
+  };
+};
+export const closePaymentCreateModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_PAYMENT_CREATE_MODAL,
+  };
+};
+
 export const showBannerViewModal = () => {
   return {
     type: ActionTypes.MODALS.SHOW_BANNER_VIEW_MODAL,
@@ -69,5 +62,17 @@ export const showBannerViewModal = () => {
 export const closeBannerViewModal = () => {
   return {
     type: ActionTypes.MODALS.CLOSE_BANNER_VIEW_MODAL,
+  };
+};
+
+export const showEditOrderModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_ORDER_EDIT_MODAL,
+  };
+};
+
+export const CloseEditOrderModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_ORDER_EDIT_MODAL,
   };
 };

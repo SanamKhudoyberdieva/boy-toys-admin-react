@@ -1,9 +1,16 @@
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Button, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import {
+  showDeleteModal,
+  showEditOrderModal,
+} from "../store/actions/modalsAction.js";
+import EditOrderModal from "../components/Modals/EditOrderModal.js";
 
 const OrderDetail = () => {
+  const dispatch = useDispatch();
   return (
     <div className="container-xxl flex-grow-1 container-p-y">
       <h4 className="py-3 mb-4">Order Details</h4>
@@ -16,11 +23,10 @@ const OrderDetail = () => {
           <div className="row">
             <div className="col-md-6 d-flex align-items-center justify-content-between mb-3 mb-md-0">
               <select className="form-select w-50">
-                <option selected className="badge bg-label-info">
-                  Dispatched
-                </option>
-                <option className="badge bg-label-danger">One</option>
-                <option className="badge bg-label-primary">Two</option>
+                <option className="badge bg-label">pending</option>
+                <option className="badge bg-label-black">success</option>
+                <option className="badge bg-label">cancel</option>
+                <option className="badge bg-label">delivered</option>
               </select>
               <p className="text-body mb-0 ms-md-2">17.09.2023, 5:48</p>
             </div>
@@ -29,6 +35,7 @@ const OrderDetail = () => {
                 className="btn btn-danger"
                 data-bs-toggle="modal"
                 data-bs-target="#deleteOrder"
+                onClick={() => dispatch(showDeleteModal())}
               >
                 Delete Order
               </button>
@@ -56,14 +63,14 @@ const OrderDetail = () => {
                     <tr>
                       <th
                         className="control sorting_disabled dtr-hidden"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         aria-label=""
                       ></th>
                       <th
                         className="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         data-col="1"
                         aria-label=""
                       >
@@ -71,32 +78,32 @@ const OrderDetail = () => {
                       </th>
                       <th
                         className="w-50 sorting_disabled"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         aria-label="products"
                       >
                         products
                       </th>
                       <th
                         className="w-25 sorting_disabled"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         aria-label="price"
                       >
                         price
                       </th>
                       <th
                         className="w-25 sorting_disabled"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         aria-label="qty"
                       >
                         qty
                       </th>
                       <th
                         className="sorting_disabled"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         aria-label="total"
                       >
                         total
@@ -104,8 +111,8 @@ const OrderDetail = () => {
 
                       <th
                         className="sorting_disabled"
-                        rowspan="1"
-                        colspan="1"
+                        rowSpan="1"
+                        colSpan="1"
                         aria-label="total"
                       >
                         Actions
@@ -114,7 +121,7 @@ const OrderDetail = () => {
                   </thead>
                   <tbody>
                     <tr className="odd">
-                      <td className="control" tabindex="0"></td>
+                      <td className="control" tabIndex="0"></td>
                       <td className="dt-checkboxes-cell">
                         <input
                           type="checkbox"
@@ -151,14 +158,20 @@ const OrderDetail = () => {
                       </td>
                       <td>
                         <Dropdown>
-                          <Dropdown.Toggle className="hide-arrow dropdown-toggle btn-succes">
-                            <FontAwesomeIcon icon={faEllipsis} rotation={90} />
+                          <Dropdown.Toggle className="hide-arrow dropdown-toggle btn-dropdown">
+                            <FontAwesomeIcon
+                              icon={faEllipsis}
+                              rotation={90}
+                              color="#000"
+                            />
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
-                            <Dropdown.Item>
+                            <Dropdown.Item
+                              onClick={() => dispatch(showEditOrderModal())}
+                            >
                               <button
                                 className="btn"
-                                tabindex="0"
+                                tabIndex="0"
                                 data-bs-toggle="modal"
                                 data-bs-target="#orderEditModal"
                               >
@@ -166,118 +179,15 @@ const OrderDetail = () => {
                               </button>
                             </Dropdown.Item>
                             <Dropdown.Item>
-                              <button className="dropdown-item delete-record">
+                              <button
+                                className="dropdown-item delete-record"
+                                onClick={() => dispatch(showDeleteModal())}
+                              >
                                 Delete
                               </button>
                             </Dropdown.Item>
                           </Dropdown.Menu>
                         </Dropdown>
-                      </td>
-                    </tr>
-                    <tr className="even">
-                      <td className="control" tabindex="0"></td>
-                      <td className="dt-checkboxes-cell">
-                        <input
-                          type="checkbox"
-                          className="dt-checkboxes form-check-input"
-                        />
-                      </td>
-                      <td className="sorting_1">
-                        <div className="d-flex justify-content-start align-items-center text-nowrap">
-                          <div className="avatar-wrapper">
-                            <div className="avatar me-2">
-                              <img
-                                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/products/oneplus.png"
-                                alt="product-Oneplus 10"
-                                className="rounded-2"
-                              />
-                            </div>
-                          </div>
-                          <div className="d-flex flex-column">
-                            <h6 className="text-body mb-0">Oneplus 10</h6>
-                            <small className="text-muted">Storage:128gb</small>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <span>$896</span>
-                      </td>
-                      <td>
-                        <span className="text-body">3</span>
-                      </td>
-                      <td>
-                        <h6 className="mb-0">$2688</h6>
-                      </td>
-                      <td></td>
-                    </tr>
-                    <tr className="odd">
-                      <td className="control" tabindex="0"></td>
-                      <td className="dt-checkboxes-cell">
-                        <input
-                          type="checkbox"
-                          className="dt-checkboxes form-check-input"
-                        />
-                      </td>
-                      <td className="sorting_1">
-                        <div className="d-flex justify-content-start align-items-center text-nowrap">
-                          <div className="avatar-wrapper">
-                            <div className="avatar me-2">
-                              <img
-                                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/products/nikejordan.png"
-                                alt="product-Nike Jordan"
-                                className="rounded-2"
-                              />
-                            </div>
-                          </div>
-                          <div className="d-flex flex-column">
-                            <h6 className="text-body mb-0">Nike Jordan</h6>
-                            <small className="text-muted">Size:8UK</small>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <span>$392</span>
-                      </td>
-                      <td>
-                        <span className="text-body">1</span>
-                      </td>
-                      <td>
-                        <h6 className="mb-0">$392</h6>
-                      </td>
-                    </tr>
-                    <tr className="even">
-                      <td className="control" tabindex="0"></td>
-                      <td className="dt-checkboxes-cell">
-                        <input
-                          type="checkbox"
-                          className="dt-checkboxes form-check-input"
-                        />
-                      </td>
-                      <td className="sorting_1">
-                        <div className="d-flex justify-content-start align-items-center text-nowrap">
-                          <div className="avatar-wrapper">
-                            <div className="avatar me-2">
-                              <img
-                                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/products/facecream.png"
-                                alt="product-Face cream"
-                                className="rounded-2"
-                              />
-                            </div>
-                          </div>
-                          <div className="d-flex flex-column">
-                            <h6 className="text-body mb-0">Face cream</h6>
-                            <small className="text-muted">Gender:Women</small>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <span>$813</span>
-                      </td>
-                      <td>
-                        <span className="text-body">2</span>
-                      </td>
-                      <td>
-                        <h6 className="mb-0">$1626</h6>
                       </td>
                     </tr>
                   </tbody>
@@ -307,6 +217,7 @@ const OrderDetail = () => {
           </div>
         </div>
       </div>
+      <EditOrderModal />
     </div>
   );
 };

@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import {
   showPaymentEditModal,
   showPaymentCreateModal,
+  showDeleteModal,
 } from "../store/actions/modalsAction.js";
 import AddPaymentModal from "../components/Modals/AddPaymentModal.js";
 
@@ -83,6 +84,7 @@ const Payment = () => {
                             className="btn btn-danger btn-icon"
                             data-bs-toggle="modal"
                             data-bs-target="#deletePaymentModal"
+                            onClick={() => dispatch(showDeleteModal())}
                           >
                             <FontAwesomeIcon icon={faTrashCan} />
                           </button>

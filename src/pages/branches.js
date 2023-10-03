@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Nav } from "react-bootstrap";
 import {
+  showDeleteModal,
   showPaymentCreateModal,
   showPaymentEditModal,
 } from "../store/actions/modalsAction.js";
@@ -81,6 +82,7 @@ const Branches = () => {
                             className="btn btn-danger btn-icon"
                             data-bs-toggle="modal"
                             data-bs-target="#deleteBranchesModal"
+                            onClick={() => dispatch(showDeleteModal())}
                           >
                             <FontAwesomeIcon icon={faTrashCan} />
                           </button>

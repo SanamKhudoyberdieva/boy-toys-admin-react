@@ -11,6 +11,7 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import {
   showBannerViewModal,
+  showDeleteModal,
   showPaymentCreateModal,
   showPaymentEditModal,
 } from "../store/actions/modalsAction.js";
@@ -43,7 +44,7 @@ const Banner = () => {
               <div className="col-1 col-md-4 col-sm-3 d-flex justify-content-end">
                 <button
                   className="dt-button create-new btn btn-primary"
-                  tabindex="0"
+                  tabIndex="0"
                   data-bs-toggle="modal"
                   data-bs-target="#productEditModal"
                   type="button"
@@ -106,6 +107,7 @@ const Banner = () => {
                           className="btn btn-danger btn-icon"
                           data-bs-toggle="modal"
                           data-bs-target="#deletePayment"
+                          onClick={() => dispatch(showDeleteModal())}
                         >
                           <FontAwesomeIcon icon={faTrashCan} />
                           {/* <i className="fa-solid fa-trash-can"></i> */}
