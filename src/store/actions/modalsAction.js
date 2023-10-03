@@ -76,3 +76,9 @@ export const CloseEditOrderModal = () => {
     type: ActionTypes.MODALS.CLOSE_ORDER_EDIT_MODAL,
   };
 };
+
+export const showDeleteModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_DELETE_MODAL,
+  };
+};
