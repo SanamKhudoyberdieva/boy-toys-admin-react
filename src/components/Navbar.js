@@ -12,17 +12,17 @@ const Navbar = () => {
     <nav
       className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
     >
-      <div className="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+      {/* <div className="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
         <Link className="nav-item nav-link px-0 me-xl-4">
           <FontAwesomeIcon icon={faBars} />
         </Link>
-      </div>
+      </div> */}
 
       <div
         className="navbar-nav-right d-flex align-items-center"
         id="navbar-collapse"
       >
-        <ul className="nav d-none d-md-flex wu-main-nav">
+        <ul className="nav d-md-flex wu-main-nav p-0">
           <li className="nav-item">
             <Link to={"/"} className="nav-link">
               Boy Toys website{" "}

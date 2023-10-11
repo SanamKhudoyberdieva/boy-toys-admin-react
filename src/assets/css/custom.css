@@ -49,3 +49,7 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+.nav-link .menu-icon {
+  margin-right: 0rem;
+}

@@ -4,6 +4,7 @@ import {
   faChevronRight,
   faEye,
   faPen,
+  faPlus,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
@@ -23,18 +24,34 @@ const Product = () => {
 
       <div className="card">
         <div className="card-body">
-          <div className="row justify-content-end mb-4">
-            <div className="col-md-4">
-              <div className="d-flex align-items-center">
-                <input
-                  className="form-control"
-                  type="text"
-                  placeholder="Search..."
-                  id="local-search"
-                />
-              </div>
+        <div className="row mb-4 justify-content-between align-items-center">
+          <div className="col-6 col-md-4 col-sm-6">
+            <div className="d-flex align-items-center">
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Search..."
+                id="local-search"
+              />
             </div>
           </div>
+
+          <div className="col-1 col-md-4 col-sm-3 d-flex justify-content-end">
+            <button
+              className="dt-button create-new btn btn-primary"
+              tabIndex="0"
+              data-bs-toggle="modal"
+              data-bs-target="#productEditModal"
+              type="button"
+              onClick={() => dispatch(showEditModal())}
+            >
+              <span>
+                <FontAwesomeIcon icon={faPlus} className="me-sm-1" />
+                <span className="d-none d-sm-inline-block">Add</span>
+              </span>
+            </button>
+          </div>
+        </div>
           <div className="overflow-x-auto">
             <table className="table mb-4 table-striped table-bordered">
               <thead>
