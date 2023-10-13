@@ -193,7 +193,7 @@ const OrderDetail = () => {
                   </tbody>
                 </table>
               </div>
-              <div className="d-flex justify-content-end align-items-center m-3 mb-2 p-1">
+              <div className="d-flex justify-content-start  justify-content-md-end align-items-center m-3 mb-2 p-1">
                 <div className="order-calculations">
                   <div className="d-flex justify-content-between mb-2">
                     <span className="w-px-100">Subtotal:</span>
