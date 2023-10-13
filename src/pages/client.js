@@ -8,6 +8,7 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Client = () => {
+
   return (
     <div className="content-wrapper">
       <div className="container-xxl flex-grow-1 container-p-y">
@@ -58,7 +59,7 @@ const Client = () => {
                           </div>
                         </div>
                         <div className="d-flex flex-column">
-                          <Link to={"/about-client"}>
+                          <Link to={"/client/895280"}>
                             <span className="fw-medium">John Doe</span>
                           </Link>
                         </div>
@@ -94,7 +95,7 @@ const Client = () => {
                           </div>
                         </div>
                         <div className="d-flex flex-column">
-                          <Link to={"/about-client"}>
+                          <Link to={"/client/586615"}>
                             <span className="fw-medium">Yan Luide</span>
                           </Link>
                         </div>

@@ -6,9 +6,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const AboutClient = () => {
+  const { clientId } = useParams();
+
   return (
     <div className="content-wrapper">
       <div className="container-xxl flex-grow-1 container-p-y">
@@ -100,7 +102,7 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="">1</td>
                         <td className="sorting_1">
-                          <Link to={"/order-detail"} className="fw-medium">
+                          <Link to={`/client/${clientId}/9957`} className="fw-medium">
                             <span>#9957</span>
                           </Link>
                         </td>
@@ -143,7 +145,7 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="">2</td>
                         <td className="sorting_1">
-                          <Link to={"/order-detail"} className="fw-medium">
+                          <Link to={`/client/${clientId}/9941`} className="fw-medium">
                             <span>#9941</span>
                           </Link>
                         </td>
@@ -186,7 +188,7 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="dt-checkboxes-cell">3</td>
                         <td className="sorting_1">
-                          <Link to={"/order-detail"} className="fw-medium">
+                          <Link to={`/client/${clientId}/9885`} className="fw-medium">
                             <span>#9885</span>
                           </Link>
                         </td>
@@ -229,7 +231,7 @@ const AboutClient = () => {
                         <td className="control dtr-hidden"></td>
                         <td className="dt-checkboxes-cell">4</td>
                         <td className="sorting_1">
-                          <Link to={"/order-detail"} className="fw-medium">
+                          <Link to={`/client/${clientId}/9879`} className="fw-medium">
                             <span>#9879</span>
                           </Link>
                         </td>
