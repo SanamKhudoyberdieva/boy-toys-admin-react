@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   faChevronLeft,
   faChevronRight,
@@ -14,9 +14,23 @@ import {
   showViewModal,
 } from "../store/actions/modalsAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getSlider } from "../api/getSlider";
 
 const Product = () => {
   const dispatch = useDispatch();
+
+  const fetchSlider = async() => {
+    try {
+      let response = await getSlider()
+      console.log("response", response);
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(() => {
+    fetchSlider()
+  }, [])
 
   return (
     <div className="container-xxl flex-grow-1 container-p-y">

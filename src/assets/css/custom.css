@@ -53,3 +53,15 @@
 .nav-link .menu-icon {
   margin-right: 0rem;
 }
+
+.table > :not(:first-child) {
+  border-top: none;
+}
+
+.nav-link {
+  padding: 0;
+}
+
+.mob-nav-active {
+  opacity: 0.5;
+}
