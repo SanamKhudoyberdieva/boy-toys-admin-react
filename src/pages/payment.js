@@ -9,17 +9,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EditPaymentModals from "../components/Modals/EditPaymentModal.js";
 
 import React from "react";
-import { Nav } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import {
-  showPaymentEditModal,
-  showPaymentCreateModal,
   showDeleteModal,
+  showAddPaymentModal,
+  showEditPaymentModal,
 } from "../store/actions/modalsAction.js";
 import AddPaymentModal from "../components/Modals/AddPaymentModal.js";
 
 const Payment = () => {
   const dispatch = useDispatch();
+
   return (
     <>
       <div className="content-wrapper">
@@ -35,7 +35,6 @@ const Payment = () => {
                       className="form-control"
                       type="text"
                       placeholder="Search..."
-                      id="local-search"
                     />
                   </form>
                 </div>
@@ -43,13 +42,10 @@ const Payment = () => {
                 <div className="col-1 col-md-4 col-sm-3 d-flex justify-content-end">
                   <button
                     className="dt-button btn btn-primary "
-                    data-bs-toggle="modal"
-                    data-bs-target="#createPaymentModal"
                     type="button"
-                    onClick={() => dispatch(showPaymentCreateModal())}
+                    onClick={() => dispatch(showAddPaymentModal())}
                   >
                     <span>
-                      {/* <box-icon className="bx bx-plus me-sm-1"></box-icon>/ */}
                       <FontAwesomeIcon icon={faPlus} className="me-sm-1" />
                       <span className="d-none d-sm-inline-block">Add</span>
                     </span>
@@ -73,17 +69,13 @@ const Payment = () => {
                         <div className="row gap-2 d-flex flex-column flex-md-row  align-items-center">
                           <button
                             className="btn btn-primary btn-icon mr-0 mr-md-2"
-                            data-bs-toggle="modal"
-                            data-bs-target="#paymentEditModal"
-                            onClick={() => dispatch(showPaymentEditModal())}
+                            onClick={() => dispatch(showEditPaymentModal())}
                           >
                             <FontAwesomeIcon icon={faPen} />
                           </button>
 
                           <button
                             className="btn btn-danger btn-icon"
-                            data-bs-toggle="modal"
-                            data-bs-target="#deletePaymentModal"
                             onClick={() => dispatch(showDeleteModal())}
                           >
                             <FontAwesomeIcon icon={faTrashCan} />
@@ -98,7 +90,7 @@ const Payment = () => {
                 <span className="mb-2 mb-md-0">
                   Showing 1 to 10 of 45 entries
                 </span>
-                <Nav>
+                <div>
                   <ul className="pagination m-0 align-items-center">
                     <li className="page-item prev">
                       <button className="page-link">
@@ -126,7 +118,7 @@ const Payment = () => {
                       </button>
                     </li>
                   </ul>
-                </Nav>
+                </div>
               </div>
             </div>
           </div>

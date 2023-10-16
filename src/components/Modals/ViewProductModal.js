@@ -1,98 +1,121 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { closeAddBannerModal } from "../../store/actions/modalsAction.js";
+import { closeViewProductModal } from "../../store/actions/modalsAction";
 
-function AddBannerModals() {
-  const { addBannerModal } = useSelector((state) => state.modalsReducer);
+const ViewProductModal = () => {
+  const { viewProductModal } = useSelector((state) => state.modalsReducer);
   const dispatch = useDispatch();
-  
-  const hideModal = () => {
-    return dispatch(closeAddBannerModal());
-  };
 
+  const hideModal = () => {
+    dispatch(closeViewProductModal());
+  };
   return (
-    <Modal className="modal fade" animation={false} show={addBannerModal}>
-      <div>
+    <Modal
+      show={viewProductModal}
+      onHide={hideModal}
+      animation={false}
+      className="modal fade"
+    >
+      <div className="modal-dialog m-0">
         <div className="modal-content">
           <Modal.Header>
             <h5 className="modal-title">
-              Add banner
+              Product view
             </h5>
             <button
               type="button"
               className="btn-close"
-              onClick={() => hideModal()}
+              onClick={hideModal}
             ></button>
           </Modal.Header>
           <Modal.Body>
             <form>
               <div>
-                <label htmlFor="name-uz" className="mb-2 form-labe">
-                  {" "}
-                  Nomi{" "}
+                <label className="mb-2 form-labe">
+                  Nomi
                 </label>
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner nomi..."
+                  placeholder="Mahsulot nomi..."
+                  disabled="true"
                 />
-                <label htmlFor="description-uz" className="mb-2 form-labe">
+                <label className="mb-2 form-labe">
                   Tasnifi
                 </label>
                 <textarea
                   type="text"
-                  className="form-control mb-2"
-                  placeholder="Banner tasnifi..."
+                  className="form-control"
+                  placeholder="Mahsulot tasnifi..."
+                  disabled="true"
                 ></textarea>
               </div>
               <hr className="my-4" />
               <div>
-                <label htmlFor="name-ru" className="mb-2 form-labe">
+                <label className="mb-2 form-labe">
                   Название
                 </label>
                 <input
                   type="text"
                   className="form-control mb-2"
                   placeholder="Название..."
+                  disabled="true"
                 />
-                <label htmlFor="description-ru" className="mb-2 form-labe">
+                <label className="mb-2 form-labe">
                   Описание
                 </label>
                 <textarea
                   type="text"
-                  className="form-control mb-2"
+                  className="form-control"
                   placeholder="Описание..."
+                  disabled="true"
                 ></textarea>
               </div>
               <hr className="my-4" />
               <div>
-                <label htmlFor="name-eu" className="mb-2 form-labe">
-                  {" "}
-                  Name{" "}
+                <label className="mb-2 form-labe">
+                  Name
                 </label>
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner name..."
+                  placeholder="Product name..."
+                  disabled="true"
                 />
-                <label htmlFor="description-eu" className="mb-2 form-labe">
+                <label className="mb-2 form-labe">
                   Description
                 </label>
                 <textarea
                   type="text"
-                  className="form-control mb-2"
-                  placeholder="Banner description..."
+                  className="form-control"
+                  placeholder="Product description..."
+                  disabled="true"
                 ></textarea>
               </div>
+              <hr className="my-4" />
               <div>
-                <label htmlFor="group-image" className="mb-2 form-labe">
-                  Banner Image
+                <label className="mb-2 form-labe">
+                  Price
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  placeholder="Product price..."
+                  disabled="true"
+                />
+              </div>
+              <div>
+                <hr className="my-4" />
+
+                <label className="mb-2 form-labe">
+                  Product image
                 </label>
                 <input
                   type="file"
                   className="form-control"
                   placeholder="Group image"
+                  disabled="true"
                 />
               </div>
             </form>
@@ -100,19 +123,16 @@ function AddBannerModals() {
           <Modal.Footer>
             <button
               type="button"
-              className="btn btn-secondary"
-              onClick={() => hideModal()}
+              className="btn btn-primary"
+              onClick={hideModal}
             >
               Close
-            </button>
-            <button type="button" className="btn btn-primary">
-              Add banner
             </button>
           </Modal.Footer>
         </div>
       </div>
     </Modal>
   );
-}
+};
 
-export default AddBannerModals;
+export default ViewProductModal;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   faChevronLeft,
   faChevronRight,
@@ -9,28 +9,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import {
+  showAddProductModal,
   showDeleteModal,
-  showEditModal,
-  showViewModal,
+  showEditProductModal,
+  showViewProductModal,
 } from "../store/actions/modalsAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getSlider } from "../api/getSlider";
+import EditProductModal from "../components/Modals/EditProductModal";
+import AddProductModal from "../components/Modals/AddProductModal";
+import ViewProductModal from "../components/Modals/ViewProductModal";
 
 const Product = () => {
   const dispatch = useDispatch();
-
-  const fetchSlider = async() => {
-    try {
-      let response = await getSlider()
-      console.log("response", response);
-    } catch (error) {
-      
-    }
-  }
-
-  useEffect(() => {
-    fetchSlider()
-  }, [])
 
   return (
     <div className="container-xxl flex-grow-1 container-p-y">
@@ -57,7 +47,7 @@ const Product = () => {
               data-bs-toggle="modal"
               data-bs-target="#productEditModal"
               type="button"
-              onClick={() => dispatch(showEditModal())}
+              onClick={() => dispatch(showAddProductModal())}
             >
               <span>
                 <FontAwesomeIcon icon={faPlus} className="me-sm-1" />
@@ -89,13 +79,13 @@ const Product = () => {
                     <div className="row gap-2 d-flex flex-column flex-md-row  align-items-center">
                       <button
                         className="btn btn-primary btn-icon mb-2 mb-md-0 mr-0 mr-md-2"
-                        onClick={() => dispatch(showEditModal())}
+                        onClick={() => dispatch(showEditProductModal())}
                       >
                         <FontAwesomeIcon icon={faPen} />
                       </button>
                       <button
                         className="btn btn-info btn-icon mb-2 mb-md-0 mr-0 mr-md-2"
-                        onClick={() => dispatch(showViewModal())}
+                        onClick={() => dispatch(showViewProductModal())}
                       >
                         <FontAwesomeIcon icon={faEye} />
                       </button>
@@ -120,13 +110,13 @@ const Product = () => {
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </button>
                 </li>
-                <li className="page-item">
+                <li className="page-item active">
                   <button className="page-link">1</button>
                 </li>
                 <li className="page-item">
                   <button className="page-link">2</button>
                 </li>
-                <li className="page-item active">
+                <li className="page-item">
                   <button className="page-link">3</button>
                 </li>
                 <li className="page-item">
@@ -145,6 +135,10 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <div className="content-backdrop fade"></div>
+      <EditProductModal />
+      <AddProductModal />
+      <ViewProductModal />
     </div>
   );
 };

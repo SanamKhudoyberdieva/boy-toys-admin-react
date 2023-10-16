@@ -6,8 +6,15 @@ import {
   faArrowRightFromBracket,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { logout } from "../store/actions/authAction";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
+  const logOutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <nav
       className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -69,13 +76,13 @@ const Navbar = () => {
                 <div className="dropdown-divider"></div>
               </li>
               <li>
-                <Dropdown.Item className="dropdown-item">
+                <button className="dropdown-item" onClick={logOutHandler}>
                   <FontAwesomeIcon
                     className="me-2"
                     icon={faArrowRightFromBracket}
                   />
                   <span className="align-middle">Log Out</span>
-                </Dropdown.Item>
+                </button>
               </li>
             </Dropdown.Menu>
           </Dropdown>

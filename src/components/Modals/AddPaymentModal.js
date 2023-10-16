@@ -1,31 +1,31 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { closePaymentCreateModal } from "../../store/actions/modalsAction.js";
+import { closeAddPaymentModal } from "../../store/actions/modalsAction.js";
 
 function AddPaymentModal() {
-  const { paymetnCreateModal } = useSelector((state) => state.modalsReducer);
+  const { addPaymentModal } = useSelector((state) => state.modalsReducer);
   const dispatch = useDispatch();
+
   const hideModal = () => {
-    return dispatch(closePaymentCreateModal());
+    return dispatch(closeAddPaymentModal());
   };
+
   return (
-    <Modal className="modal fade" animation={false} show={paymetnCreateModal}>
+    <Modal className="modal fade" animation={false} show={addPaymentModal}>
       <div>
         <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="createModal">
-              Payments Name
+          <Modal.Header>
+            <h5 className="modal-title">
+              Add payment
             </h5>
             <button
               type="button"
               className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
               onClick={() => hideModal()}
             ></button>
-          </div>
-          <div className="modal-body">
+          </Modal.Header>
+          <Modal.Body>
             <form>
               <div>
                 <label htmlFor="name" className="mb-2 form-labe">
@@ -35,25 +35,23 @@ function AddPaymentModal() {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Payment name"
-                  name="name"
+                  placeholder="Payment name..."
                 />
               </div>
             </form>
-          </div>
-          <div className="modal-footer">
+          </Modal.Body>
+          <Modal.Footer>
             <button
               type="button"
               className="btn btn-secondary"
-              data-bs-dismiss="modal"
               onClick={() => hideModal()}
             >
               Close
             </button>
             <button type="button" className="btn btn-primary">
-              Save changes
+              Add payment
             </button>
-          </div>
+          </Modal.Footer>
         </div>
       </div>
     </Modal>

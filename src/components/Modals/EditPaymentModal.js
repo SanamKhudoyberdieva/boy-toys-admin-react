@@ -1,31 +1,29 @@
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { closePaymentEditModal } from "../../store/actions/modalsAction.js";
+import { closeEditPaymentModal } from "../../store/actions/modalsAction.js";
 
 function EditPaymentModals() {
-  const { paymentEditModal } = useSelector((state) => state.modalsReducer);
+  const { editPaymentModal } = useSelector((state) => state.modalsReducer);
 
   const dispatch = useDispatch();
   const hideModal = () => {
-    return dispatch(closePaymentEditModal());
+    return dispatch(closeEditPaymentModal());
   };
   return (
-    <Modal className="modal fade" animation={false} show={paymentEditModal}>
+    <Modal className="modal fade" animation={false} show={editPaymentModal}>
       <div>
         <div className="modal-content">
-          <div className="modal-header">
+          <Modal.Header>
             <h5 className="modal-title" id="productEditModalLabel">
-              Payments Name
+              Edit Payment
             </h5>
             <button
               type="button"
               className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
               onClick={() => hideModal()}
             ></button>
-          </div>
-          <div className="modal-body">
+          </Modal.Header>
+          <Modal.Body>
             <form>
               <div>
                 <label htmlFor="name" className="mb-2 form-labe">
@@ -35,17 +33,15 @@ function EditPaymentModals() {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Payment name"
-                  name="name"
+                  placeholder="Payment name..."
                 />
               </div>
             </form>
-          </div>
-          <div className="modal-footer">
+          </Modal.Body>
+          <Modal.Footer>
             <button
               type="button"
               className="btn btn-secondary"
-              data-bs-dismiss="modal"
               onClick={() => hideModal()}
             >
               Close
@@ -53,7 +49,7 @@ function EditPaymentModals() {
             <button type="button" className="btn btn-primary">
               Save changes
             </button>
-          </div>
+          </Modal.Footer>
         </div>
       </div>
     </Modal>

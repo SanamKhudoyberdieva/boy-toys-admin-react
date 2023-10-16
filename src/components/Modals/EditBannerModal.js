@@ -1,65 +1,49 @@
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { closePaymentEditModal } from "../../store/actions/modalsAction.js";
+import { closeEditBannerModal } from "../../store/actions/modalsAction.js";
 
 function EditBannerModals() {
-  const { paymentEditModal } = useSelector((state) => state.modalsReducer);
-
+  const { editBannerModal } = useSelector((state) => state.modalsReducer);
   const dispatch = useDispatch();
+
   const hideModal = () => {
-    return dispatch(closePaymentEditModal());
+    return dispatch(closeEditBannerModal());
   };
+
   return (
-    <Modal className="modal fade" animation={false} show={paymentEditModal}>
+    <Modal className="modal fade" animation={false} show={editBannerModal}>
       <div>
         <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="productEditModalLabel">
-              Slider
+          <Modal.Header>
+            <h5 className="modal-title">
+              Edit banner
             </h5>
             <button
               type="button"
               className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
               onClick={() => hideModal()}
             ></button>
-          </div>
-          <div className="modal-body">
+          </Modal.Header>
+          <Modal.Body>
             <form>
               <div>
                 <label htmlFor="name-uz" className="mb-2 form-labe">
                   {" "}
-                  Name{" "}
+                  Nomi{" "}
                 </label>
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner nomi ..."
-                  name="nameUz"
+                  placeholder="Banner nomi..."
                 />
                 <label htmlFor="description-uz" className="mb-2 form-labe">
                   Tasnifi
                 </label>
                 <textarea
                   type="text"
-                  className="form-control"
-                  placeholder="Banner Tasnifi ..."
-                  name="descriptionUz"
+                  className="form-control mb-2"
+                  placeholder="Banner tasnifi..."
                 ></textarea>
-              </div>
-
-              <div>
-                <label htmlFor="group-image" className="mb-2 form-labe">
-                  Banner Image
-                </label>
-                <input
-                  type="file"
-                  id="group-image"
-                  name="fileImage"
-                  className="form-control"
-                  placeholder="Group image"
-                />
               </div>
               <hr className="my-4" />
               <div>
@@ -69,30 +53,16 @@ function EditBannerModals() {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner nomi"
-                  name="nameRu"
+                  placeholder="Название..."
                 />
                 <label htmlFor="description-ru" className="mb-2 form-labe">
                   Описание
                 </label>
                 <textarea
                   type="text"
-                  className="form-control"
-                  placeholder="Banner tasnifi..."
-                  name="descriptionRu"
+                  className="form-control mb-2"
+                  placeholder="Описание..."
                 ></textarea>
-              </div>
-              <div>
-                <label htmlFor="group-image" className="mb-2 form-labe">
-                  Banner Image
-                </label>
-                <input
-                  type="file"
-                  id="group-image"
-                  name="fileImage"
-                  className="form-control"
-                  placeholder="Group image"
-                />
               </div>
               <hr className="my-4" />
               <div>
@@ -103,41 +73,33 @@ function EditBannerModals() {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner name"
-                  name="nameEn"
+                  placeholder="Banner name..."
                 />
                 <label htmlFor="description-eu" className="mb-2 form-labe">
                   Description
                 </label>
                 <textarea
                   type="text"
-                  className="form-control"
+                  className="form-control mb-2"
                   placeholder="Banner description..."
-                  name="descriptionEn"
                 ></textarea>
               </div>
-
               <div>
-                <hr className="my-4" />
-
                 <label htmlFor="group-image" className="mb-2 form-labe">
                   Banner Image
                 </label>
                 <input
                   type="file"
-                  id="group-image"
-                  name="fileImage"
                   className="form-control"
                   placeholder="Group image"
                 />
               </div>
             </form>
-          </div>
-          <div className="modal-footer">
+          </Modal.Body>
+          <Modal.Footer>
             <button
               type="button"
               className="btn btn-secondary"
-              data-bs-dismiss="modal"
               onClick={() => hideModal()}
             >
               Close
@@ -145,7 +107,7 @@ function EditBannerModals() {
             <button type="button" className="btn btn-primary">
               Save changes
             </button>
-          </div>
+          </Modal.Footer>
         </div>
       </div>
     </Modal>

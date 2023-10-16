@@ -3,41 +3,39 @@ import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { closeBannerViewModal } from "../../store/actions/modalsAction.js";
 
-function ShowBannerModal() {
-  const { showBannerModal } = useSelector((state) => state.modalsReducer);
-
+function ViewBannerModal() {
+  const { viewBannerModal } = useSelector((state) => state.modalsReducer);
   const dispatch = useDispatch();
+
   const hideModal = () => {
     return dispatch(closeBannerViewModal());
   };
+
   return (
-    <Modal className="modal fade" show={showBannerModal}>
+    <Modal className="modal fade" show={viewBannerModal}>
       <div>
         <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="productEditModalLabel">
-              Slider
+          <Modal.Header>
+            <h5 className="modal-title">
+              View banner
             </h5>
             <button
               type="button"
               className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
               onClick={() => hideModal()}
             ></button>
-          </div>
-          <div className="modal-body">
+          </Modal.Header>
+          <Modal.Body>
             <form>
               <div>
                 <label htmlFor="name-uz" className="mb-2 form-labe">
                   {" "}
-                  Name{" "}
+                  Nomi{" "}
                 </label>
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner nomi ..."
-                  name="nameUz"
+                  placeholder="Banner nomi..."
                   disabled="true"
                 />
                 <label htmlFor="description-uz" className="mb-2 form-labe">
@@ -45,25 +43,10 @@ function ShowBannerModal() {
                 </label>
                 <textarea
                   type="text"
-                  className="form-control"
-                  placeholder="Banner Tasnifi ..."
-                  name="descriptionUz"
+                  className="form-control mb-2"
+                  placeholder="Banner tasnifi..."
                   disabled="true"
                 ></textarea>
-              </div>
-
-              <div>
-                <label htmlFor="group-image" className="mb-2 form-labe">
-                  Banner Image
-                </label>
-                <input
-                  type="file"
-                  id="group-image"
-                  name="fileImage"
-                  className="form-control"
-                  placeholder="Group image"
-                  disabled="true"
-                />
               </div>
               <hr className="my-4" />
               <div>
@@ -73,8 +56,7 @@ function ShowBannerModal() {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner nomi"
-                  name="nameRu"
+                  placeholder="Название..."
                   disabled="true"
                 />
                 <label htmlFor="description-ru" className="mb-2 form-labe">
@@ -82,24 +64,10 @@ function ShowBannerModal() {
                 </label>
                 <textarea
                   type="text"
-                  className="form-control"
-                  placeholder="Banner tasnifi..."
-                  name="descriptionRu"
+                  className="form-control mb-2"
+                  placeholder="Описание..."
                   disabled="true"
                 ></textarea>
-              </div>
-              <div>
-                <label htmlFor="group-image" className="mb-2 form-labe">
-                  Banner Image
-                </label>
-                <input
-                  type="file"
-                  id="group-image"
-                  name="fileImage"
-                  className="form-control"
-                  placeholder="Group image"
-                  disabled="true"
-                />
               </div>
               <hr className="my-4" />
               <div>
@@ -110,8 +78,7 @@ function ShowBannerModal() {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Banner name"
-                  name="nameEn"
+                  placeholder="Banner name..."
                   disabled="true"
                 />
                 <label htmlFor="description-eu" className="mb-2 form-labe">
@@ -119,43 +86,36 @@ function ShowBannerModal() {
                 </label>
                 <textarea
                   type="text"
-                  className="form-control"
+                  className="form-control mb-2"
                   placeholder="Banner description..."
-                  name="descriptionEn"
                   disabled="true"
                 ></textarea>
               </div>
-
               <div>
-                <hr className="my-4" />
-
                 <label htmlFor="group-image" className="mb-2 form-labe">
-                  Banner Image
+                  Banner image
                 </label>
                 <input
                   type="file"
-                  id="group-image"
-                  name="fileImage"
                   className="form-control"
                   placeholder="Group image"
                 />
               </div>
             </form>
-          </div>
-          <div className="modal-footer">
+          </Modal.Body>
+          <Modal.Footer>
             <button
               type="button"
-              className="btn btn-secondary"
-              data-bs-dismiss="modal"
+              className="btn btn-primary"
               onClick={() => hideModal()}
             >
               Close
             </button>
-          </div>
+          </Modal.Footer>
         </div>
       </div>
     </Modal>
   );
 }
 
-export default ShowBannerModal;
+export default ViewBannerModal;

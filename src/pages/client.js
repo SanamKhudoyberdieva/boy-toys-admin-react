@@ -4,7 +4,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Client = () => {
@@ -23,7 +22,6 @@ const Client = () => {
                     className="form-control"
                     type="text"
                     placeholder="Search..."
-                    id="local-search"
                   />
                 </div>
               </div>
@@ -32,8 +30,6 @@ const Client = () => {
               <i className="tf-icon bx bx-chevron-left"></i>
               <table
                 className="datatables-customers table border-top dataTable no-footer dtr-column table-striped table-bordered"
-                id="DataTables_Table_0"
-                aria-describedby="DataTables_Table_0_info"
               >
                 <thead>
                   <tr>
@@ -45,7 +41,7 @@ const Client = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="">
+                  <tr>
                     <td className="dt-checkboxes-cell">1</td>
                     <td className="sorting_1">
                       <div className="d-flex justify-content-start align-items-center customer-name">
@@ -83,7 +79,7 @@ const Client = () => {
                     </td>
                   </tr>
 
-                  <tr className="">
+                  <tr>
                     <td className="dt-checkboxes-cell">2</td>
                     <td className="sorting_1">
                       <div className="d-flex justify-content-start align-items-center customer-name">
@@ -125,7 +121,7 @@ const Client = () => {
               <span className="mb-2 mb-md-0">
                 Showing 1 to 10 of 45 entries
               </span>
-              <Nav>
+              <div>
                 <ul className="pagination m-0 align-items-center">
                   <li className="page-item prev">
                     <button className="page-link">
@@ -153,7 +149,7 @@ const Client = () => {
                     </button>
                   </li>
                 </ul>
-              </Nav>
+              </div>
             </div>
           </div>
         </div>

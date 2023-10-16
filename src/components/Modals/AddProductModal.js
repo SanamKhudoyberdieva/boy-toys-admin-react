@@ -1,18 +1,19 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { closeViewModal } from "../../store/actions/modalsAction";
+import { closeAddProductModal } from "../../store/actions/modalsAction";
 
-const ViewModal = () => {
-  const { viewModal } = useSelector((state) => state.modalsReducer);
+const AddProductModal = () => {
+  const { addProductModal } = useSelector((state) => state.modalsReducer);
   const dispatch = useDispatch();
 
   const hideModal = () => {
-    dispatch(closeViewModal());
+    dispatch(closeAddProductModal());
   };
+
   return (
     <Modal
-      show={viewModal}
+      show={addProductModal}
       onHide={hideModal}
       animation={false}
       className="modal fade"
@@ -21,7 +22,7 @@ const ViewModal = () => {
         <div className="modal-content">
           <Modal.Header>
             <h5 className="modal-title">
-              Product view
+                Add product
             </h5>
             <button
               type="button"
@@ -29,7 +30,7 @@ const ViewModal = () => {
               onClick={hideModal}
             ></button>
           </Modal.Header>
-          <Modal.Body className="modal-body">
+          <Modal.Body>
             <form>
               <div>
                 <label className="mb-2 form-labe">
@@ -38,7 +39,7 @@ const ViewModal = () => {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Gruppa nomi"
+                  placeholder="Mahsulot nomi..."
                 />
                 <label className="mb-2 form-labe">
                   Tasnifi
@@ -46,7 +47,7 @@ const ViewModal = () => {
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Gruppa tasnifi..."
+                  placeholder="Mahsulot tasnifi..."
                 ></textarea>
               </div>
               <hr className="my-4" />
@@ -57,7 +58,7 @@ const ViewModal = () => {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Group name"
+                  placeholder="Название..."
                 />
                 <label className="mb-2 form-labe">
                   Описание
@@ -65,7 +66,7 @@ const ViewModal = () => {
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Group description..."
+                  placeholder="Описание..."
                 ></textarea>
               </div>
               <hr className="my-4" />
@@ -76,7 +77,7 @@ const ViewModal = () => {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Group name"
+                  placeholder="Product name..."
                 />
                 <label className="mb-2 form-labe">
                   Description
@@ -84,7 +85,7 @@ const ViewModal = () => {
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Group description..."
+                  placeholder="Product description..."
                 ></textarea>
               </div>
               <hr className="my-4" />
@@ -95,12 +96,11 @@ const ViewModal = () => {
                 <input
                   type="number"
                   className="form-control"
-                  placeholder="Group position"
+                  placeholder="Product price..."
                 />
               </div>
               <div>
                 <hr className="my-4" />
-
                 <label className="mb-2 form-labe">
                   Product image
                 </label>
@@ -121,7 +121,7 @@ const ViewModal = () => {
               Close
             </button>
             <button type="button" className="btn btn-primary">
-              Save changes
+              Add product
             </button>
           </Modal.Footer>
         </div>
@@ -130,4 +130,4 @@ const ViewModal = () => {
   );
 };
 
-export default ViewModal;
+export default AddProductModal;

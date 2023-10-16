@@ -1,19 +1,19 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { closeEditModal } from "../../store/actions/modalsAction";
+import { closeEditProductModal } from "../../store/actions/modalsAction";
 
-const EditModal = () => {
-  const { editModal } = useSelector((state) => state.modalsReducer);
+const EditProductModal = () => {
+  const { editProductModal } = useSelector((state) => state.modalsReducer);
   const dispatch = useDispatch();
 
   const hideModal = () => {
-    dispatch(closeEditModal());
+    dispatch(closeEditProductModal());
   };
 
   return (
     <Modal
-      show={editModal}
+      show={editProductModal}
       onHide={hideModal}
       animation={false}
       className="modal fade"
@@ -39,7 +39,8 @@ const EditModal = () => {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Gruppa nomi"
+                  placeholder="Mahsulot nomi..."
+
                 />
                 <label className="mb-2 form-labe">
                   Tasnifi
@@ -47,7 +48,7 @@ const EditModal = () => {
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Gruppa tasnifi..."
+                  placeholder="Mahsulot tasnifi..."
                 ></textarea>
               </div>
               <hr className="my-4" />
@@ -58,7 +59,7 @@ const EditModal = () => {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Group name"
+                  placeholder="Название..."
                 />
                 <label className="mb-2 form-labe">
                   Описание
@@ -66,7 +67,7 @@ const EditModal = () => {
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Group description..."
+                  placeholder="Описание..."
                 ></textarea>
               </div>
               <hr className="my-4" />
@@ -77,7 +78,7 @@ const EditModal = () => {
                 <input
                   type="text"
                   className="form-control mb-2"
-                  placeholder="Group name"
+                  placeholder="Product name..."
                 />
                 <label className="mb-2 form-labe">
                   Description
@@ -85,7 +86,7 @@ const EditModal = () => {
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Group description..."
+                  placeholder="Product description..."
                 ></textarea>
               </div>
               <hr className="my-4" />
@@ -96,12 +97,11 @@ const EditModal = () => {
                 <input
                   type="number"
                   className="form-control"
-                  placeholder="Group position"
+                  placeholder="Product price..."
                 />
               </div>
               <div>
                 <hr className="my-4" />
-
                 <label className="mb-2 form-labe">
                   Product image
                 </label>
@@ -131,4 +131,4 @@ const EditModal = () => {
   );
 };
 
-export default EditModal;
+export default EditProductModal;

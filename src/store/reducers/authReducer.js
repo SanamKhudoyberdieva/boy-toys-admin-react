@@ -26,7 +26,12 @@ const authReducer = (state = initialValue, action) => {
         phones: null,
         isLogin: true,
       };
-
+      case ActionTypes.AUTH.LOGOUT:
+        return {
+          ...state,
+          token: "",
+          isLogin: false,
+        };
     case ActionTypes.AUTH.SET_USER_PHONE:
       return {
         ...state,

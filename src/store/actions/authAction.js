@@ -13,6 +13,13 @@ export const login = (payload) => {
   };
 };
 
+export const logout = (payload) => {
+  return {
+    type: ActionTypes.AUTH.LOGOUT,
+    payload,
+  };
+};
+
 export const checkphoneAction = (payload) => {
   return {
     type: ActionTypes.AUTH.SET_USER_PHONE,

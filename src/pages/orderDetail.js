@@ -8,6 +8,7 @@ import {
   showEditOrderModal,
 } from "../store/actions/modalsAction.js";
 import EditOrderModal from "../components/Modals/EditOrderModal.js";
+import { Link } from "react-router-dom";
 
 const OrderDetail = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const OrderDetail = () => {
     <div className="container-xxl flex-grow-1 container-p-y">
       <h4 className="py-3 mb-4">Order Details</h4>
       <h4 className="py-3 mb-4">
-        <span className="text-muted fw-light">Order Details /</span> #32543
+        <Link to={"/client"} className="text-muted fw-light">Order Details / </Link>
+        <Link to={"/client/895280"} className="text-muted fw-light"> #32543 / </Link> #1234
       </h4>
 
       <div className="card mb-4">
@@ -28,13 +30,11 @@ const OrderDetail = () => {
                 <option className="badge bg-label">cancel</option>
                 <option className="badge bg-label">delivered</option>
               </select>
-              <p className="text-body mb-0 ms-md-2">17.09.2023, 5:48</p>
+              <p className="text-body mb-0 ms-md-2">17.09.2023</p>
             </div>
             <div className="col-md-6 d-flex align-items-center justify-content-md-end">
               <button
                 className="btn btn-danger"
-                data-bs-toggle="modal"
-                data-bs-target="#deleteOrder"
                 onClick={() => dispatch(showDeleteModal())}
               >
                 Delete Order
@@ -61,21 +61,6 @@ const OrderDetail = () => {
                 >
                   <thead>
                     <tr>
-                      <th
-                        className="control sorting_disabled dtr-hidden"
-                        rowSpan="1"
-                        colSpan="1"
-                        aria-label=""
-                      ></th>
-                      <th
-                        className="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all"
-                        rowSpan="1"
-                        colSpan="1"
-                        data-col="1"
-                        aria-label=""
-                      >
-                        <input type="checkbox" className="form-check-input" />
-                      </th>
                       <th
                         className="w-50 sorting_disabled"
                         rowSpan="1"
@@ -121,13 +106,6 @@ const OrderDetail = () => {
                   </thead>
                   <tbody>
                     <tr className="odd">
-                      <td className="control" tabIndex="0"></td>
-                      <td className="dt-checkboxes-cell">
-                        <input
-                          type="checkbox"
-                          className="dt-checkboxes form-check-input"
-                        />
-                      </td>
                       <td className="sorting_1">
                         <div className="d-flex justify-content-start align-items-center text-nowrap">
                           <div className="avatar-wrapper">
@@ -166,22 +144,18 @@ const OrderDetail = () => {
                             />
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
-                            <Dropdown.Item
-                              onClick={() => dispatch(showEditOrderModal())}
-                            >
+                            <Dropdown.Item 
+                            onClick={() => dispatch(showEditOrderModal())}>
                               <button
                                 className="btn"
-                                tabIndex="0"
-                                data-bs-toggle="modal"
-                                data-bs-target="#orderEditModal"
                               >
                                 Edit
                               </button>
                             </Dropdown.Item>
-                            <Dropdown.Item>
+                            <Dropdown.Item 
+                            onClick={() => dispatch(showDeleteModal())}>
                               <button
                                 className="dropdown-item delete-record"
-                                onClick={() => dispatch(showDeleteModal())}
                               >
                                 Delete
                               </button>

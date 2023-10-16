@@ -10,6 +10,7 @@ const DeleteModal = () => {
   const hideModal = () => {
     dispatch(closeDeleteModal());
   };
+  
   return (
     <Modal
       show={deleteModal}
@@ -20,7 +21,7 @@ const DeleteModal = () => {
       <div className="modal-dialog m-0">
         <div className="modal-content">
           <Modal.Header>
-            <h5 className="modal-title">Product delete</h5>
+            <h5 className="modal-title">Delete</h5>
             <button
               type="button"
               className="btn-close"

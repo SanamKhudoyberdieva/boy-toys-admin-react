@@ -1,26 +1,44 @@
 import ActionTypes from "../action-types/actionTypes";
 
-export const showEditModal = () => {
+export const showAddProductModal = () => {
   return {
-    type: ActionTypes.MODALS.SHOW_EDIT_MODAL,
+    type: ActionTypes.MODALS.SHOW_ADD_PRODUCT_MODAL,
   };
 };
 
-export const closeEditModal = () => {
+export const closeAddProductModal = () => {
   return {
-    type: ActionTypes.MODALS.CLOSE_EDIT_MODAL,
+    type: ActionTypes.MODALS.CLOSE_ADD_PRODUCT_MODAL,
   };
 };
 
-export const showViewModal = () => {
+export const showEditProductModal = () => {
   return {
-    type: ActionTypes.MODALS.SHOW_VIEW_MODAL,
+    type: ActionTypes.MODALS.SHOW_EDIT_PRODUCT_MODAL,
   };
 };
 
-export const closeViewModal = () => {
+export const closeEditProductModal = () => {
   return {
-    type: ActionTypes.MODALS.CLOSE_VIEW_MODAL,
+    type: ActionTypes.MODALS.CLOSE_EDIT_PRODUCT_MODAL,
+  };
+};
+
+export const showViewProductModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_VIEW_PRODUCT_MODAL,
+  };
+};
+
+export const closeViewProductModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_VIEW_PRODUCT_MODAL,
+  };
+};
+
+export const showDeleteModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_DELETE_MODAL,
   };
 };
 
@@ -30,26 +48,27 @@ export const closeDeleteModal = () => {
   };
 };
 
-export const showPaymentEditModal = () => {
+export const showAddBannerModal = () => {
   return {
-    type: ActionTypes.MODALS.SHOW_PAYMENT_EDIT_MODAL,
+    type: ActionTypes.MODALS.SHOW_ADD_BANNER_MODAL,
   };
 };
 
-export const closePaymentEditModal = () => {
+export const closeAddBannerModal = () => {
   return {
-    type: ActionTypes.MODALS.CLOSE_PAYMENT_EDIT_MODAL,
+    type: ActionTypes.MODALS.CLOSE_ADD_BANNER_MODAL,
   };
 };
 
-export const showPaymentCreateModal = () => {
+export const showEditBannerModal = () => {
   return {
-    type: ActionTypes.MODALS.SHOW_PAYMENT_CREATE_MODAL,
+    type: ActionTypes.MODALS.SHOW_EDIT_BANNER_MODAL,
   };
 };
-export const closePaymentCreateModal = () => {
+
+export const closeEditBannerModal = () => {
   return {
-    type: ActionTypes.MODALS.CLOSE_PAYMENT_CREATE_MODAL,
+    type: ActionTypes.MODALS.CLOSE_EDIT_BANNER_MODAL,
   };
 };
 
@@ -65,6 +84,53 @@ export const closeBannerViewModal = () => {
   };
 };
 
+export const showAddBranchModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_ADD_BRANCH_MODAL,
+  };
+};
+
+export const closeAddBranchModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_ADD_BRANCH_MODAL,
+  };
+};
+
+export const showEditBranchModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_EDIT_BRANCH_MODAL,
+  };
+};
+
+export const closeEditBranchModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_EDIT_BRANCH_MODAL,
+  };
+};
+
+export const showAddPaymentModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_ADD_PAYMENT_MODAL,
+  };
+};
+export const closeAddPaymentModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_ADD_PAYMENT_MODAL,
+  };
+};
+
+export const showEditPaymentModal = () => {
+  return {
+    type: ActionTypes.MODALS.SHOW_EDIT_PAYMENT_MODAL,
+  };
+};
+
+export const closeEditPaymentModal = () => {
+  return {
+    type: ActionTypes.MODALS.CLOSE_EDIT_PAYMENT_MODAL,
+  };
+};
+
 export const showEditOrderModal = () => {
   return {
     type: ActionTypes.MODALS.SHOW_ORDER_EDIT_MODAL,
@@ -77,8 +143,4 @@ export const CloseEditOrderModal = () => {
   };
 };
 
-export const showDeleteModal = () => {
-  return {
-    type: ActionTypes.MODALS.SHOW_DELETE_MODAL,
-  };
-};
+

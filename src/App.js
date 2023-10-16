@@ -14,28 +14,32 @@ import Branches from "./pages/branches";
 import AboutClient from "./pages/aboutClient";
 import OrderDetail from "./pages/orderDetail";
 import Login from "./pages/login.js";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import { useSelector } from "react-redux";
 
 function App() {
+  const isLogin = useSelector((state) => state.authReducer.isLogin)
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Layout>
-            <Outlet />
-          </Layout>
-        }
-      >
-        <Route path="/" element={<Product />} />
-        <Route path="/client" element={<Client />} />
-        <Route path="/client/:clientId" element={<AboutClient />} />
-        <Route path="/client/:clientId/:orderId" element={<OrderDetail />} />
-        <Route path="/banner" element={<Banner />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/branches" element={<Branches />} />
-      </Route>
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <>
+      {/* <ProtectedRoute  isSignedIn={isLogin}> */}
+        <Routes>
+          <Route path="/" element={ <Layout> <Outlet /> </Layout> }>
+            <Route path="/" element={<Product />} />
+            <Route path="/client" element={<Client />} />
+            <Route path="/client/:clientId" element={<AboutClient />} />
+            <Route path="/client/:clientId/:orderId" element={<OrderDetail />} />
+            <Route path="/banner" element={<Banner />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/branches" element={<Branches />} />
+          </Route>
+        </Routes>
+      {/* </ProtectedRoute> */}
+      {!isLogin && (
+        <Routes>
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      )}
+    </>
   );
 }
 

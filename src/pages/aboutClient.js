@@ -1,11 +1,9 @@
 import {
   faChevronLeft,
   faChevronRight,
-  faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Nav } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
 const AboutClient = () => {
@@ -14,7 +12,9 @@ const AboutClient = () => {
   return (
     <div className="content-wrapper">
       <div className="container-xxl flex-grow-1 container-p-y">
-        <h4 className="fw-bold mb-4">Clients About</h4>
+        <h4 className="fw-bold mb-4">
+          <Link to={"/client"} className="text-muted fw-light">Clients /</Link> #634759
+        </h4>
 
         <div className="row flex-column-reverse flex-md-row">
           <div className="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
@@ -78,207 +78,138 @@ const AboutClient = () => {
                         <input
                           type="search"
                           className="form-control"
-                          placeholder="Search order"
+                          placeholder="Search order..."
                         />
                       </label>
                     </div>
                   </div>
-                  <table className="table datatables-customer-order border-top dataTable no-footer dtr-column">
+                  <div className="card-body">
+                  <table className="table table-bordered">
                     <thead>
                       <tr>
-                        <th className="control dtr-hidden" aria-label=""></th>
-                        <th className="">#</th>
-                        <th className="">Order</th>
-                        <th className="">Date</th>
-                        <th className="">Status</th>
+                        <th>#</th>
+                        <th>Order</th>
+                        <th>Date</th>
+                        <th>Status</th>
                         <th>Spent</th>
-                        {/* <th className="text-md-center" aria-label="Actions">
-                          Actions
-                        </th> */}
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="odd">
-                        <td className="control dtr-hidden"></td>
-                        <td className="">1</td>
+                        <td>1</td>
                         <td className="sorting_1">
                           <Link to={`/client/${clientId}/9957`} className="fw-medium">
                             <span>#9957</span>
                           </Link>
                         </td>
-                        <td className="">
+                        <td>
                           <span className="text-nowrap">Nov 29, 2022</span>
                         </td>
-                        <td className="">
+                        <td>
                           <span
                             className="badge bg-label-primary"
-                            text-capitalized=""
                           >
                             Out for delivery
                           </span>
                         </td>
-                        <td className="">
+                        <td>
                           <span>$59.28</span>
                         </td>
-                        {/* <td className="">
-                          <div className="text-xxl-center">
-                            <button
-                              className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                              data-bs-toggle="dropdown"
-                            >
-                              <FontAwesomeIcon
-                                icon={faEllipsis}
-                                rotation={90}
-                              />
-                            </button>
-                            <div className="dropdown-menu dropdown-menu-end m-0">
-                              <button className="dropdown-item">Edit</button>
-
-                              <button className="dropdown-item delete-record">
-                                Delete
-                              </button>
-                            </div>
-                          </div>
-                        </td> */}
                       </tr>
                       <tr className="even">
-                        <td className="control dtr-hidden"></td>
-                        <td className="">2</td>
+                        <td>2</td>
                         <td className="sorting_1">
                           <Link to={`/client/${clientId}/9941`} className="fw-medium">
                             <span>#9941</span>
                           </Link>
                         </td>
-                        <td className="">
+                        <td>
                           <span className="text-nowrap">Jun 20, 2022</span>
                         </td>
-                        <td className="">
+                        <td>
                           <span
                             className="badge bg-label-info"
-                            text-capitalized=""
                           >
                             Ready to Pickup
                           </span>
                         </td>
-                        <td className="">
+                        <td>
                           <span>$333.83</span>
                         </td>
-                        {/* <td className="">
-                          <div className="text-xxl-center">
-                            <button
-                              className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                              data-bs-toggle="dropdown"
-                            >
-                              <FontAwesomeIcon
-                                icon={faEllipsis}
-                                rotation={90}
-                              />
-                            </button>
-                            <div className="dropdown-menu dropdown-menu-end m-0">
-                              <button className="dropdown-item">Edit</button>
-
-                              <button className="dropdown-item delete-record">
-                                Delete
-                              </button>
-                            </div>
-                          </div>
-                        </td> */}
                       </tr>
                       <tr className="odd">
-                        <td className="control dtr-hidden"></td>
                         <td className="dt-checkboxes-cell">3</td>
                         <td className="sorting_1">
                           <Link to={`/client/${clientId}/9885`} className="fw-medium">
                             <span>#9885</span>
                           </Link>
                         </td>
-                        <td className="">
+                        <td>
                           <span className="text-nowrap">Sep 11, 2022</span>
                         </td>
-                        <td className="">
+                        <td>
                           <span
                             className="badge bg-label-success"
-                            text-capitalized=""
                           >
                             Delivered
                           </span>
                         </td>
-                        <td className="">
+                        <td>
                           <span>$62.71</span>
                         </td>
-                        {/* <td className="">
-                          <div className="text-xxl-center">
-                            <button
-                              className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                              data-bs-toggle="dropdown"
-                            >
-                              <FontAwesomeIcon
-                                icon={faEllipsis}
-                                rotation={90}
-                              />
-                            </button>
-                            <div className="dropdown-menu dropdown-menu-end m-0">
-                              <button className="dropdown-item">Edit</button>
-
-                              <button className="dropdown-item delete-record">
-                                Delete
-                              </button>
-                            </div>
-                          </div>
-                        </td> */}
                       </tr>
                       <tr className="even">
-                        <td className="control dtr-hidden"></td>
                         <td className="dt-checkboxes-cell">4</td>
                         <td className="sorting_1">
                           <Link to={`/client/${clientId}/9879`} className="fw-medium">
                             <span>#9879</span>
                           </Link>
                         </td>
-                        <td className="">
+                        <td>
                           <span className="text-nowrap">Dec 23, 2022</span>
                         </td>
-                        <td className="">
+                        <td>
                           <span
                             className="badge bg-label-warning"
-                            text-capitalized=""
                           >
                             Dispatched
                           </span>
                         </td>
-                        <td className="">
+                        <td>
                           <span>$100.18</span>
                         </td>
-                        {/* <td className="">
-                          <div className="text-xxl-center">
-                            <button
-                              className="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                              data-bs-toggle="dropdown"
-                            >
-                              <FontAwesomeIcon
-                                icon={faEllipsis}
-                                rotation={90}
-                              />
-                            </button>
-                            <div className="dropdown-menu dropdown-menu-end m-0">
-                              <button className="dropdown-item">Edit</button>
-
-                              <button className="dropdown-item delete-record">
-                                Delete
-                              </button>
-                            </div>
-                          </div>
-                        </td> */}
+                      </tr>
+                      <tr className="odd">
+                        <td className="dt-checkboxes-cell">5</td>
+                        <td className="sorting_1">
+                          <Link to={`/client/${clientId}/9885`} className="fw-medium">
+                            <span>#9885</span>
+                          </Link>
+                        </td>
+                        <td>
+                          <span className="text-nowrap">Sep 11, 2022</span>
+                        </td>
+                        <td>
+                          <span
+                            className="badge bg-label-success"
+                          >
+                            Delivered
+                          </span>
+                        </td>
+                        <td>
+                          <span>$62.71</span>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
+                  </div>
                 </div>
               </div>
-              <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 overflow-x-auto p-3">
+              <div className="d-flex flex-column flex-md-row justify-content-between align-items-center overflow-x-auto p-3">
                 <span className="mb-2 mb-md-0">
                   Showing 1 to 10 of 45 entries
                 </span>
-                <Nav>
+                <div>
                   <ul className="pagination m-0 align-items-center">
                     <li className="page-item prev">
                       <button className="page-link">
@@ -306,7 +237,7 @@ const AboutClient = () => {
                       </button>
                     </li>
                   </ul>
-                </Nav>
+                </div>
               </div>
             </div>
           </div>

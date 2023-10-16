@@ -8,20 +8,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Nav } from "react-bootstrap";
 import {
+  showAddBannerModal,
   showBannerViewModal,
   showDeleteModal,
-  showPaymentCreateModal,
-  showPaymentEditModal,
+  showEditBannerModal,
 } from "../store/actions/modalsAction.js";
 import { useDispatch } from "react-redux";
 import EditBannerModals from "../components/Modals/EditBannerModal.js";
 import AddBannerModals from "../components/Modals/AddBannerModal.js";
-import ShowBannerModal from "../components/Modals/ShowBannerModal.js";
+import ViewBannerModal from "../components/Modals/ViewBannerModal.js";
 
 const Banner = () => {
   const dispatch = useDispatch();
+
   return (
     <div className="content-wrapper">
       <div className="container-xxl flex-grow-1 container-p-y">
@@ -36,7 +36,6 @@ const Banner = () => {
                     className="form-control"
                     type="text"
                     placeholder="Search..."
-                    id="local-search"
                   />
                 </div>
               </div>
@@ -45,10 +44,8 @@ const Banner = () => {
                 <button
                   className="dt-button create-new btn btn-primary"
                   tabIndex="0"
-                  data-bs-toggle="modal"
-                  data-bs-target="#productEditModal"
                   type="button"
-                  onClick={() => dispatch(showPaymentCreateModal())}
+                  onClick={() => dispatch(showAddBannerModal())}
                 >
                   <span>
                     <FontAwesomeIcon icon={faPlus} className="me-sm-1" />
@@ -85,32 +82,23 @@ const Banner = () => {
                       <div className="d-flex flex-column flex-md-row align-items-center justify-content-start gap-2">
                         <button
                           className="btn btn-primary btn-icon mr-0 mr-md-2"
-                          data-bs-toggle="modal"
-                          data-bs-target="#productEditModal"
-                          onClick={() => dispatch(showPaymentEditModal())}
+                          onClick={() => dispatch(showEditBannerModal())}
                         >
-                          {/* <i className="fa-solid fa-pen"></i> */}
                           <FontAwesomeIcon icon={faPen} />
                         </button>
 
                         <button
                           className="btn btn-info btn-icon mb-md-0 mr-0 mr-md-2"
-                          data-bs-toggle="modal"
-                          data-bs-target="#bannerViewModal"
                           onClick={() => dispatch(showBannerViewModal())}
                         >
-                          {/* <i className="fa-solid fa-eye"></i> */}
                           <FontAwesomeIcon icon={faEye} />
                         </button>
 
                         <button
                           className="btn btn-danger btn-icon"
-                          data-bs-toggle="modal"
-                          data-bs-target="#deletePayment"
                           onClick={() => dispatch(showDeleteModal())}
                         >
                           <FontAwesomeIcon icon={faTrashCan} />
-                          {/* <i className="fa-solid fa-trash-can"></i> */}
                         </button>
                       </div>
                     </td>
@@ -122,7 +110,7 @@ const Banner = () => {
               <span className="mb-2 mb-md-0">
                 Showing 1 to 10 of 45 entries
               </span>
-              <Nav>
+              <div>
                 <ul className="pagination m-0 align-items-center">
                   <li className="page-item prev">
                     <button className="page-link">
@@ -150,7 +138,7 @@ const Banner = () => {
                     </button>
                   </li>
                 </ul>
-              </Nav>
+              </div>
             </div>
           </div>
         </div>
@@ -159,7 +147,7 @@ const Banner = () => {
       <div className="content-backdrop fade"></div>
       <EditBannerModals />
       <AddBannerModals />
-      <ShowBannerModal />
+      <ViewBannerModal />
     </div>
   );
 };
