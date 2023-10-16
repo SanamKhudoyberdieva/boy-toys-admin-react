@@ -14,7 +14,6 @@ const OrderDetail = () => {
   const dispatch = useDispatch();
   return (
     <div className="container-xxl flex-grow-1 container-p-y">
-      <h4 className="py-3 mb-4">Order Details</h4>
       <h4 className="py-3 mb-4">
         <Link to={"/client"} className="text-muted fw-light">Order Details / </Link>
         <Link to={"/client/895280"} className="text-muted fw-light"> #32543 / </Link> #1234
